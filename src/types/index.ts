@@ -34,3 +34,20 @@ export const NAVIGATION_ITEMS = [
   { id: "projects", label: "프로젝트" },
   { id: "contact", label: "연락처" },
 ] as const;
+
+export const SITE_CONFIG = {
+  name: "포트폴리오",
+  title: "개발자 포트폴리오",
+  description: "next.js로 만든 개발자 포트폴리오입니다.",
+  url: "https://domain.com", // 추후 변경
+  keywords: [
+    "개발자",
+    "포트폴리오",
+    "프론트엔드",
+    "Frontend",
+    "React",
+    "Next.js",
+    "TypeScript",
+    "Tailwind",
+  ],
+};
