@@ -1,9 +1,9 @@
-import { ThemeToggle } from "@/components/layout/ThemeToggle";
+import { Header } from "@/components/layout/Header";
 
 export default function Home() {
   return (
     <div className="min-h-screen">
-      <ThemeToggle />
+      <Header />
     </div>
   );
 }

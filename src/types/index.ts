@@ -28,11 +28,10 @@ export const CONTACT_INFO: ContactInfo = {
 };
 
 export const NAVIGATION_ITEMS = [
-  { id: "home", label: "홈" },
-  { id: "about", label: "소개" },
-  { id: "skills", label: "스킬" },
-  { id: "projects", label: "프로젝트" },
-  { id: "contact", label: "연락처" },
+  { id: "about", label: "about" },
+  { id: "skills", label: "skills" },
+  { id: "projects", label: "projects" },
+  { id: "contact", label: "contact" },
 ] as const;
 
 export const SITE_CONFIG = {
