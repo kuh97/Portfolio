@@ -50,7 +50,7 @@ export function Header() {
             onClick={() => handleNavClick("hero")}
             className="text-xl md:text-2xl font-bold hover:text-emerald-200 transition-colors"
           >
-            {"김의현"}
+            {"Portfolio"}
           </Link>
 
           {/* 데스크탑 네비게이션 */}

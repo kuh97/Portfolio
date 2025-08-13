@@ -25,6 +25,9 @@ export const CONTACT_INFO: ContactInfo = {
   email: "rladml91gus@naver.com",
   phone: "010-8310-8853",
   github: "https://github.com/kuh97",
+  linkedin:
+    "https://www.linkedin.com/in/%EC%9D%98%ED%98%84-%EA%B9%80-64b608335/",
+  blog: "https://kuh97.tistory.com/",
 };
 
 export const NAVIGATION_ITEMS = [
