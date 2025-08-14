@@ -40,7 +40,7 @@ export function About() {
               끊임없이 고민하고 있습니다.
             </p>
 
-            <div className="flex flex-wrap gap-2">
+            <div className="flex flex-wrap justify-center lg:justify-start gap-2">
               {keywords.map((keyword, index) => (
                 <span
                   key={index}
@@ -51,7 +51,7 @@ export function About() {
               ))}
             </div>
 
-            <div className="pt-4 flex flex-wrap gap-4">
+            <div className="pt-4 flex flex-wrap gap-4 justify-center lg:justify-start">
               <a
                 href="/resume.pdf"
                 target="_blank"
