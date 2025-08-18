@@ -44,13 +44,7 @@ export function Header() {
     >
       <div className="section-container">
         <div className="flex items-center justify-between h-16 md:h-20">
-          <Link
-            href={"#hero"}
-            onClick={() => handleNavClick("hero")}
-            className="text-xl md:text-2xl font-bold hover:text-emerald-200 transition-colors"
-          >
-            {"Portfolio"}
-          </Link>
+          <h1 className="text-2xl font-semi-bold">Portfolio</h1>
 
           {/* 데스크탑 네비게이션 */}
           <nav className="hidden md:flex items-center space-x-8">
