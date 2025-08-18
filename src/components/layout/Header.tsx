@@ -23,7 +23,6 @@ export function Header() {
   }, []);
 
   const handleNavClick = (id: string) => {
-    console.log(id);
     const element = document.getElementById(id);
     element?.scrollIntoView({ behavior: "smooth" });
     setIsMobileMenuOpen(false);
