@@ -1,3 +1,5 @@
+import { JSX } from "react";
+
 export interface Project {
   id: string;
   title: string;
@@ -9,8 +11,16 @@ export interface Project {
 }
 
 export interface Skill {
+  id: number;
   name: string;
-  icon: string;
+  icon: JSX.Element | "";
+}
+
+export interface SkillsData {
+  Frontend: Skill[];
+  Backend: Skill[];
+  Database: Skill[];
+  Others: Skill[];
 }
 
 export interface ContactInfo {
