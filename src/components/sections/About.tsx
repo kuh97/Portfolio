@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { BsDownload } from "react-icons/bs";
+import { AnimatedSection } from "../common/AnimatedSection";
 
 const keywords = ["사용자 경험(UX)", "협업 & 소통", "도전", "긍정적 사고"];
 
@@ -12,24 +13,30 @@ export function About() {
       className="section-padding bg-gray-200 dark:bg-gray-800/50"
     >
       <div className="section-container">
-        <div className="text-center mb-16">
+        <AnimatedSection animation="fade" className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
             About Me
           </h2>
-        </div>
+        </AnimatedSection>
 
         <div className="grid lg:grid-cols-2 gap-12 items-center">
-          <div className="relative justify-self-center bg-gray-700/50 p-4 rounded-2xl shadow-lg">
-            <div className="relative w-64 h-80 lg:w-72 lg:h-96">
-              <Image
-                src="/profile.jpg"
-                alt="김의현 프로필 사진"
-                fill
-                className="rounded-xl object-cover"
-              />
+          <AnimatedSection animation="slide-left">
+            <div className="relative justify-self-center bg-gray-700/50 p-4 rounded-2xl shadow-lg">
+              <div className="relative w-64 h-80 lg:w-72 lg:h-96">
+                <Image
+                  src="/profile.jpg"
+                  alt="김의현 프로필 사진"
+                  fill
+                  className="rounded-xl object-cover"
+                />
+              </div>
             </div>
-          </div>
-          <div className="space-y-6 text-center lg:text-left">
+          </AnimatedSection>
+
+          <AnimatedSection
+            animation="slide-right"
+            className="space-y-6 text-center lg:text-left"
+          >
             <h3 className="text-2xl font-semibold text-gray-900 dark:text-white mb-4">
               안녕하세요! 프론트엔드 개발자 김의현입니다 👋
             </h3>
@@ -42,16 +49,23 @@ export function About() {
 
             <div className="flex flex-wrap justify-center lg:justify-start gap-2">
               {keywords.map((keyword, index) => (
-                <span
+                <AnimatedSection
                   key={index}
-                  className="px-3 py-1 bg-emerald-600/10 text-amber-300 rounded-full text-sm font-medium"
+                  animation="scale"
+                  delay={index * 0.1}
                 >
-                  {keyword}
-                </span>
+                  <span className="px-3 py-1 bg-emerald-600/10 text-amber-300 rounded-full text-sm font-medium">
+                    {keyword}
+                  </span>
+                </AnimatedSection>
               ))}
             </div>
 
-            <div className="pt-4 flex flex-wrap gap-4 justify-center lg:justify-start">
+            <AnimatedSection
+              animation="fade"
+              delay={0.3}
+              className="pt-4 flex flex-wrap gap-4 justify-center lg:justify-start"
+            >
               <a
                 href="/resume.pdf"
                 target="_blank"
@@ -72,8 +86,8 @@ export function About() {
                 <BsDownload className="w-6 h-6 mr-3" />
                 경력기술서 다운로드
               </a>
-            </div>
-          </div>
+            </AnimatedSection>
+          </AnimatedSection>
         </div>
       </div>
     </section>
