@@ -17,6 +17,7 @@ export interface Skill {
 }
 
 export interface SkillsData {
+  All: Skill[];
   Frontend: Skill[];
   Backend: Skill[];
   Database: Skill[];

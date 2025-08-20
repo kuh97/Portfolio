@@ -19,11 +19,7 @@ export function Skills() {
     CATEGORIES.All
   );
 
-  const allSkills = Object.values(skills).flat();
-  const displayedSkills =
-    activeCategory === CATEGORIES.All
-      ? allSkills
-      : skills[activeCategory] || [];
+  const displayedSkills = Object.values(skills).flat();
 
   return (
     <section
@@ -61,7 +57,12 @@ export function Skills() {
               animation="slide-up"
               delay={index * 0.02}
               key={skill.name}
-              className="flex flex-col items-center justify-center gap-2 p-4 bg-white dark:bg-gray-900/50 rounded-lg shadow-md hover:shadow-xl transition-all duration-300 hover:scale-105"
+              className={`flex flex-col items-center justify-center gap-2 p-4 bg-white dark:bg-gray-900/50 rounded-lg shadow-md transition-all duration-300 hover:scale-105 ${
+                skills[activeCategory]?.includes(skill) ||
+                activeCategory === "All"
+                  ? ""
+                  : "blur-md opacity-15"
+              }`}
             >
               <div className="text-4xl">{skill.icon || ""}</div>
               <p className="font-semibold text-gray-800 dark:text-gray-200">
