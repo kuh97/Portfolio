@@ -20,9 +20,11 @@ export function Header() {
   }, []);
 
   const handleNavClick = (id: string) => {
-    const element = document.getElementById(id);
-    element?.scrollIntoView({ behavior: "smooth" });
     setIsMobileMenuOpen(false);
+    setTimeout(() => {
+      const element = document.getElementById(id);
+      element?.scrollIntoView({ behavior: "smooth" });
+    }, 100);
   };
 
   return (
@@ -75,7 +77,7 @@ export function Header() {
               initial={{ opacity: 0, height: 0 }}
               animate={{ opacity: 1, height: "auto" }}
               exit={{ opacity: 0, height: 0 }}
-              className="md:hidden border-t border-gray-200 drak:border-gray-700 bg-white dark:bg-gray-900"
+              className="md:hidden border-t border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900"
             >
               <div className="py-4 space-y-2">
                 {NAVIGATION_ITEMS.map((item) => (
