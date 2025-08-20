@@ -21,7 +21,7 @@ export function About() {
 
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <AnimatedSection animation="slide-left">
-            <div className="relative justify-self-center bg-gray-700/50 p-4 rounded-2xl shadow-lg">
+            <div className="relative mx-auto w-fit bg-gray-700/50 p-4 rounded-2xl shadow-lg">
               <div className="relative w-64 h-80 lg:w-72 lg:h-96">
                 <Image
                   src="/profile.jpg"
