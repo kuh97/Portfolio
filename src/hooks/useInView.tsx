@@ -1,5 +1,3 @@
-"use client";
-
 import { useInView as useInViewObserver } from "react-intersection-observer";
 
 interface UseInViewOptions {
