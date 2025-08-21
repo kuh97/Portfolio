@@ -54,24 +54,31 @@ export function Skills() {
         </AnimatedSection>
 
         <div
-          className={`grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 xl:grid-cols-7 gap-6`}
+          className={`grid grid-cols-5 sm:grid-cols-5 md:grid-cols-6 lg:grid-cols-7 xl:grid-cols-8 gap-4`}
         >
           {displayedSkills.map((skill, index) => (
             <AnimatedSection
               animation="slide-up"
               delay={index * 0.02}
               key={skill.name}
-              className={`flex flex-col items-center justify-center gap-2 p-4 bg-white dark:bg-gray-900/50 rounded-lg shadow-md transition-all duration-300 hover:scale-105 ${
+              className={`relative flex flex-col items-center justify-center gap-2 p-4 bg-white dark:bg-gray-900/50 rounded-lg shadow-md transition-all duration-300 ${
                 skills[activeCategory]?.includes(skill) ||
                 activeCategory === "All"
-                  ? ""
-                  : "blur-md opacity-15"
+                  ? "group hover:scale-105"
+                  : "blur-md opacity-15 pointer-events-none"
               }`}
             >
               <div className={`text-4xl`}>{skill.icon || ""}</div>
-              <p className={`font-semibold text-gray-800 dark:text-gray-200`}>
+              <p
+                className={`hidden md:block font-semibold text-gray-800 dark:text-gray-200 text-center text-sm`}
+              >
                 {skill.name}
               </p>
+              <div
+                className={`md:hidden absolute bottom-full mb-2 px-3 py-1.5 bg-gray-900 text-white dark:bg-white dark:text-gray-900 rounded-lg shadow-lg text-sm opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none`}
+              >
+                {skill.name}
+              </div>
             </AnimatedSection>
           ))}
         </div>
