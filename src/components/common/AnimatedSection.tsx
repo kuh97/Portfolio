@@ -41,31 +41,13 @@ export function AnimatedSection({
   animation = "slide-up",
 }: AnimatedSectionProps) {
   const { ref, inView } = useInView();
-  const [currentAnimation, setCurrentAnimation] = useState(animation);
-
-  useEffect(() => {
-    const handleResize = () => {
-      if (
-        window.innerWidth < 768 &&
-        (animation === "slide-left" || animation === "slide-right")
-      ) {
-        setCurrentAnimation("slide-up");
-      } else {
-        setCurrentAnimation(animation);
-      }
-    };
-
-    handleResize();
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, [animation]);
 
   return (
     <motion.div
       ref={ref}
       initial="hidden"
       animate={inView ? "visible" : "hidden"}
-      variants={animations[currentAnimation]}
+      variants={animations[animation]}
       transition={{ duration: 0.5, delay, ease: "easeInOut" }}
       className={className}
     >

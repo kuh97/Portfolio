@@ -3,10 +3,13 @@
 import Image from "next/image";
 import { BsDownload } from "react-icons/bs";
 import { AnimatedSection } from "../common/AnimatedSection";
+import { useMediaQuery } from "@/hooks/useMediaQuery";
 
 const keywords = ["사용자 경험(UX)", "협업 & 소통", "도전", "긍정적 사고"];
 
 export function About() {
+  const isLarge = useMediaQuery("(min-width: 1024px)");
+
   return (
     <section
       id="about"
@@ -22,7 +25,7 @@ export function About() {
         </AnimatedSection>
 
         <div className={`grid lg:grid-cols-2 gap-12 items-center`}>
-          <AnimatedSection animation="slide-left">
+          <AnimatedSection animation={isLarge ? "slide-left" : "slide-up"}>
             <div
               className={`relative mx-auto w-fit bg-emerald-300/40 dark:bg-emerald-200/60 p-4 rounded-2xl shadow-lg`}
             >
@@ -38,7 +41,7 @@ export function About() {
           </AnimatedSection>
 
           <AnimatedSection
-            animation="slide-right"
+            animation={isLarge ? "slide-right" : "slide-up"}
             className={`space-y-6 text-center lg:text-left`}
           >
             <h3
