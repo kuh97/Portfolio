@@ -38,7 +38,7 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <div className="min-h-screen">
+          <div className={`min-h-screen`}>
             <Header />
             <main>{children}</main>
             <ScrollToTop />

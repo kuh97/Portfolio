@@ -39,9 +39,9 @@ export function ScrollToTop() {
           exit={{ opacity: 0, y: 20 }}
           transition={{ duration: 0.2 }}
           aria-label="맨 위로 이동"
-          className="fixed bottom-8 right-8 z-50 p-3 rounded-full bg-emerald-500 text-white shadow-lg hover:bg-emerald-600 transition-all"
+          className={`fixed bottom-8 right-8 z-50 p-3 rounded-full bg-emerald-500 text-white shadow-lg hover:bg-emerald-600 transition-all`}
         >
-          <FaArrowUp className="w-5 h-5" />
+          <FaArrowUp className={`w-5 h-5`} />
         </motion.button>
       )}
     </AnimatePresence>

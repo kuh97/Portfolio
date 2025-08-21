@@ -65,28 +65,36 @@ export function Hero() {
   return (
     <section
       id="hero"
-      className="min-h-screen flex items-center justify-center relative"
+      className={`min-h-screen flex items-center justify-center relative bg-stone-100 dark:bg-transparent`}
     >
-      <div className="section-container relative z-10">
-        <div className="text-center max-w-4xl mx-auto">
+      <div className={`section-container relative z-10`}>
+        <div className={`text-center max-w-4xl mx-auto`}>
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3, duration: 0.5 }}
-            className="text-4xl md:text-6xl lg:text-7xl font-bold text-gray-900 dark:text-white mb-6"
+            className={`text-4xl md:text-6xl lg:text-7xl font-bold text-gray-900 dark:text-white mb-6`}
           >
-            {"안녕하세요, 김의현입니다."}
+            안녕하세요,{" "}
+            <span
+              className={`text-emerald-400/70 drop-shadow-[0_0_8px_rgba(16,185,129,1)] dark:drop-shadow-[0_0_10px_rgba(16,255,200,0.8)]`}
+            >
+              김의현
+            </span>
+            입니다.
           </motion.h1>
 
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4, duration: 0.5 }}
-            className="mb-8"
+            className={`mb-8`}
           >
-            <h2 className="text-3xl md:text-3xl font-semibold text-gray-700 dark:text-gray-200 min-h-[3rem]">
+            <h2
+              className={`text-3xl md:text-3xl font-semibold text-gray-700 dark:text-gray-200 min-h-[3rem]`}
+            >
               {currentText}
-              <span className="animate-pulse">|</span>
+              <span className={`animate-pulse`}>|</span>
             </h2>
           </motion.div>
 
@@ -94,54 +102,54 @@ export function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5, duration: 0.5 }}
-            className="text-lg text-gray-600 dark:text-gray-300 mb-12 max-w-2xl mx-auto leading-relaxed"
+            className={`text-lg text-gray-600 dark:text-gray-300 mb-12 max-w-2xl mx-auto leading-relaxed`}
           >
-            {"복잡함을 단순하게, 단순함을 아름답게"}
+            {"단순함 속에서 편리함을, 편리함 속에서 즐거움을"}
           </motion.p>
 
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.7, duration: 0.5 }}
-            className="flex items-center justify-center space-x-8"
+            className={`flex items-center justify-center space-x-8`}
           >
             <a
               href={CONTACT_INFO.github}
               target="_blank"
               rel="noopener noreferrer"
-              className="p-3 bg-white dark:bg-gray-800 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 text-gray-700 dark:text-gray-300 hover:text-emerald-400"
+              className={`contact-icon`}
             >
-              <BsGithub className="w-6 h-6" />
+              <BsGithub className={`w-6 h-6`} />
             </a>
 
             <a
               href={CONTACT_INFO.linkedin}
               target="_blank"
               rel="noopener noreferrer"
-              className="p-3 bg-white dark:bg-gray-800 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 text-gray-700 dark:text-gray-300 hover:text-emerald-400"
+              className={`contact-icon`}
             >
-              <BsLinkedin className="w-6 h-6" />
+              <BsLinkedin className={`w-6 h-6`} />
             </a>
 
             <a
               href={CONTACT_INFO.blog}
               target="_blank"
               rel="noopener noreferrer"
-              className="p-3 bg-white dark:bg-gray-800 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 text-gray-700 dark:text-gray-300 hover:text-emerald-400"
+              className={`contact-icon`}
             >
-              <SiTistory className="w-6 h-6" />
+              <SiTistory className={`w-6 h-6`} />
             </a>
 
-            <div className="relative">
+            <div className={`relative`}>
               <button
                 onClick={handleEmailClick}
-                className="p-3 bg-white dark:bg-gray-800 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 text-gray-700 dark:text-gray-300 hover:text-emerald-400"
+                className={`contact-icon`}
                 aria-label="이메일 복사하기"
               >
                 {isEmailCopied ? (
-                  <HiCheck className="w-6 h-6 text-green-500" />
+                  <HiCheck className={`w-6 h-6 text-emerald-400/70`} />
                 ) : (
-                  <HiMail className="w-6 h-6" />
+                  <HiMail className={`w-6 h-6`} />
                 )}
               </button>
               <AnimatePresence>
@@ -151,7 +159,7 @@ export function Hero() {
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: 10 }}
                     transition={{ duration: 0.2 }}
-                    className="absolute top-16 left-1/2 -translate-x-1/2 px-3 py-1.5 text-sm bg-gray-900 text-white dark:bg-white dark:text-gray-900 rounded-lg shadow-lg whitespace-nowrap"
+                    className={`absolute top-16 left-1/2 -translate-x-1/2 px-3 py-1.5 text-sm bg-gray-900 text-white dark:bg-white dark:text-gray-900 rounded-lg shadow-lg whitespace-nowrap`}
                   >
                     복사되었습니다!
                   </motion.div>
@@ -168,9 +176,9 @@ export function Hero() {
         animate={{ opacity: 1 }}
         transition={{ delay: 1, duration: 0.5 }}
         onClick={scrollToNext}
-        className="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-cyan-300 transition-colors animate-bounce"
+        className={`absolute bottom-8 left-1/2 transform -translate-x-1/2 text-emerald-500/80 transition-colors animate-bounce`}
       >
-        <HiArrowDown className="w-8 h-8" />
+        <HiArrowDown className={`w-8 h-8`} />
       </motion.button>
     </section>
   );
