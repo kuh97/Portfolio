@@ -2,7 +2,7 @@
 
 import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
-import { BsSun, BsMoon } from "react-icons/bs";
+import { BsSunFill, BsMoonFill } from "react-icons/bs";
 
 export function ThemeToggle() {
   const [mounted, setMounted] = useState<boolean>(false);
@@ -17,13 +17,13 @@ export function ThemeToggle() {
   return (
     <button
       onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-      className="p-2 rounded-2xl hover:bg-gray-900 dark:hover:bg-gray-200 transition-colors"
+      className={`p-2 rounded-2xl hover:bg-gray-900/40 dark:hover:bg-white/40 transition-colors`}
       aria-label="테마 변경"
     >
       {theme === "dark" ? (
-        <BsSun className="w-5 h-5 text-yellow-500" />
+        <BsSunFill className={`w-5 h-5 text-yellow-300`} />
       ) : (
-        <BsMoon className="w-5 h-5 text-blue-600" />
+        <BsMoonFill className={`w-5 h-5 text-blue-600`} />
       )}
     </button>
   );
