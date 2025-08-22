@@ -27,11 +27,11 @@
   @apply shadow-[0_0_20px_rgba(16,185,129,1)] dark:shadow-[0_0_30px_rgba(16,255,200,0.1)];
 }
 
-.download-button {
-  @apply inline-flex items-center px-6 py-3 bg-emerald-500/70 text-white rounded-lg transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl;
+.primary-button {
+  @apply inline-flex items-center justify-center px-6 py-3 bg-emerald-500/70 text-white rounded-lg transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl;
 }
 
-.download-button:hover {
+.primary-button:hover {
   @apply bg-amber-400/50 dark:bg-amber-400/80 hover:text-black;
 }
 

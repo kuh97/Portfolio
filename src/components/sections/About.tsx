@@ -13,7 +13,7 @@ export function About() {
   return (
     <section
       id="about"
-      className={`section-padding bg-gray-200 dark:bg-gray-800/50`}
+      className={`section-padding bg-stone-200 dark:bg-gray-800/50`}
     >
       <div className={`section-container`}>
         <AnimatedSection animation="fade" className={`text-center mb-16`}>
@@ -83,7 +83,7 @@ export function About() {
               <a
                 href="/resume.pdf"
                 download="김의현-이력서.pdf"
-                className={`download-button`}
+                className={`primary-button`}
               >
                 <BsDownload className={`w-6 h-6 mr-3`} />
                 이력서 다운로드
@@ -91,7 +91,7 @@ export function About() {
               <a
                 href="/workExperience.pdf"
                 download="김의현-경력기술서.pdf"
-                className={`download-button`}
+                className={`primary-button`}
               >
                 <BsDownload className={`w-6 h-6 mr-3`} />
                 경력기술서 다운로드
