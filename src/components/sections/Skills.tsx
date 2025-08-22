@@ -27,12 +27,8 @@ export function Skills() {
       className={`section-padding bg-stone-100 dark:bg-gray-800`}
     >
       <div className={`section-container`}>
-        <AnimatedSection animation="fade" className={`mb-16`}>
-          <h2
-            className={`text-center text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4`}
-          >
-            Skills
-          </h2>
+        <AnimatedSection animation="fade" className={`text-center mb-16`}>
+          <h2 className={`section-header`}>Skills</h2>
         </AnimatedSection>
 
         <AnimatedSection animation="slide-up">

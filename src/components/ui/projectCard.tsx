@@ -10,7 +10,7 @@ interface ProjectCardProps {
 export function ProjectCard({ project }: ProjectCardProps) {
   return (
     <section
-      className={`overflow-hidden flex flex-col justify-start gap-8 rounded-2xl bg-stone-100 dark:bg-gray-800 relative h-[23rem] group  transition-transform transition-shadow duration-300 ease-out hover:shadow-xl hover:-translate-y-2`}
+      className={`overflow-hidden flex flex-col justify-start gap-8 rounded-2xl bg-stone-100 dark:bg-gray-800 relative h-[23rem] group transition-transform transition-shadow duration-300 ease-out hover:shadow-xl hover:-translate-y-2`}
     >
       {project.image && (
         <div className="relative h-48 overflow-hidden">
