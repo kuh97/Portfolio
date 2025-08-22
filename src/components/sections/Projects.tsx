@@ -12,11 +12,7 @@ export function Projects() {
     >
       <div className={`section-container`}>
         <AnimatedSection animation="fade" className={`text-center mb-16`}>
-          <h2
-            className={`text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4`}
-          >
-            Projects
-          </h2>
+          <h2 className={`section-header`}>Projects</h2>
         </AnimatedSection>
 
         <div className={`grid gap-8 md:grid-cols-2 lg:grid-cols-3`}>
