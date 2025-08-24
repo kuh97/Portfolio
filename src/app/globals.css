@@ -68,7 +68,7 @@
 }
 
 .section-header {
-  @apply relative inline-flex text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4;
+  @apply relative inline-flex font-bold text-gray-900 dark:text-white mb-4;
 }
 
 .section-header::after {

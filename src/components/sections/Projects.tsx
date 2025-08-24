@@ -3,8 +3,24 @@
 import { projects } from "@/data/projects";
 import { AnimatedSection } from "../common/AnimatedSection";
 import { ProjectCard } from "../ui/projectCard";
+import { Project } from "@/types";
+import { useState } from "react";
+import { ProjectModal } from "../ui/projectModal";
 
 export function Projects() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [selectedProject, setSelectedProject] = useState<Project | null>(null);
+
+  const handleOpenModal = (project: Project) => {
+    setSelectedProject(project);
+    setIsModalOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
+    setSelectedProject(null);
+  };
+
   return (
     <section
       id="projects"
@@ -12,7 +28,7 @@ export function Projects() {
     >
       <div className={`section-container`}>
         <AnimatedSection animation="fade" className={`text-center mb-16`}>
-          <h2 className={`section-header`}>Projects</h2>
+          <h2 className={`section-header text-3xl md:text-4xl `}>Projects</h2>
         </AnimatedSection>
 
         <div className={`grid gap-8 md:grid-cols-2 lg:grid-cols-3`}>
@@ -22,11 +38,17 @@ export function Projects() {
               delay={parseFloat(project.id) * 0.1}
               key={project.id}
             >
-              <ProjectCard project={project} />
+              <ProjectCard
+                project={project}
+                openDetailModal={() => handleOpenModal(project)}
+              />
             </AnimatedSection>
           ))}
         </div>
       </div>
+      {isModalOpen && selectedProject && (
+        <ProjectModal project={selectedProject} onClose={handleCloseModal} />
+      )}
     </section>
   );
 }
