@@ -1,10 +1,20 @@
 import { JSX } from "react";
 
+export interface TaskItem {
+  id: string;
+  title: string;
+  issue: string;
+  solutions: string[];
+  achievements: string[];
+}
+
 export interface Project {
   id: string;
   title: string;
-  description: string;
+  descriptions: string[];
   technologies: string[];
+  tasks: TaskItem[];
+  period?: string;
   image?: string;
   githubUrl?: string;
   liveUrl?: string;

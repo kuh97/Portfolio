@@ -17,7 +17,7 @@ export function About() {
     >
       <div className={`section-container`}>
         <AnimatedSection animation="fade" className={`text-center mb-16`}>
-          <h2 className={`section-header`}>About Me</h2>
+          <h2 className={`section-header text-3xl md:text-4xl `}>About Me</h2>
         </AnimatedSection>
 
         <div className={`grid lg:grid-cols-2 gap-12 items-center`}>

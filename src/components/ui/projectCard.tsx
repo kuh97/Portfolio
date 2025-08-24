@@ -5,12 +5,15 @@ import Image from "next/image";
 
 interface ProjectCardProps {
   project: Project;
+  openDetailModal: () => void;
 }
 
-export function ProjectCard({ project }: ProjectCardProps) {
+export function ProjectCard({ project, openDetailModal }: ProjectCardProps) {
   return (
     <section
-      className={`overflow-hidden flex flex-col justify-start gap-8 rounded-2xl bg-stone-100 dark:bg-gray-800 relative h-[23rem] group transition-transform transition-shadow duration-300 ease-out hover:shadow-xl hover:-translate-y-2`}
+      className={`overflow-hidden flex flex-col justify-start gap-8 rounded-2xl bg-stone-100 dark:bg-gray-800 
+        relative h-[23rem] group transition-transform transition-shadow duration-300 ease-out hover:shadow-xl 
+        hover:-translate-y-2`}
     >
       {project.image && (
         <div className="relative h-48 overflow-hidden">
@@ -26,20 +29,32 @@ export function ProjectCard({ project }: ProjectCardProps) {
       )}
 
       <div className={`p-6 flex-grow flex flex-col`}>
-        <h4 className="text-2xl font-bold dark:text-white mb-2">
+        <h2 className="text-[clamp(1.25rem,2vw,1.5rem)] font-bold dark:text-white mb-3 border-b border-gray-400 pb-2">
           {project.title}
-        </h4>
-        <p className="text-gray-600 dark:text-gray-300 text-sm mb-4 line-clamp-3">
-          {project.description}
-        </p>
+        </h2>
+        <ul className="list-disc ml-5">
+          {project.descriptions.map((description, index) => (
+            <li
+              key={index}
+              className="text-gray-600 dark:text-gray-300 text-sm mb-2"
+            >
+              {description}
+            </li>
+          ))}
+        </ul>
       </div>
 
-      <div className="absolute z-[3] flex flex-col items-center justify-center gap-10 text-black dark:text-white w-full h-full p-5 hover:bg-stone-100 dark:hover:bg-gray-800 opacity-0 transition group-hover:opacity-100">
+      <div
+        className="absolute z-[3] flex flex-col items-center justify-center gap-10 text-black dark:text-white w-full 
+          h-full p-5 hover:bg-stone-100 dark:hover:bg-gray-800 opacity-0 transition group-hover:opacity-100"
+      >
         <h3 className="font-bold text-2xl group-hover:text-center">
           {project.title}
         </h3>
         <div className="w-2/3 flex flex-col gap-3">
-          <button className="primary-button">자세히보기</button>
+          <button className="primary-button" onClick={openDetailModal}>
+            자세히보기
+          </button>
           {project.githubUrl && (
             <a
               href={project.githubUrl}

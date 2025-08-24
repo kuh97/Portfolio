@@ -28,7 +28,7 @@ export function Skills() {
     >
       <div className={`section-container`}>
         <AnimatedSection animation="fade" className={`text-center mb-16`}>
-          <h2 className={`section-header`}>Skills</h2>
+          <h2 className={`section-header text-3xl md:text-4xl `}>Skills</h2>
         </AnimatedSection>
 
         <AnimatedSection animation="slide-up">
