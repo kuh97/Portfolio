@@ -2,6 +2,7 @@
 
 import { Project } from "@/types";
 import Image from "next/image";
+import { HiOutlineArrowRight } from "react-icons/hi";
 
 interface ProjectCardProps {
   project: Project;
@@ -11,8 +12,9 @@ interface ProjectCardProps {
 export function ProjectCard({ project, openDetailModal }: ProjectCardProps) {
   return (
     <section
+      id="ProjectCard"
       className={`overflow-hidden flex flex-col justify-start gap-8 rounded-2xl bg-stone-100 dark:bg-gray-800 
-        relative h-[23rem] group transition-transform transition-shadow duration-300 ease-out hover:shadow-xl 
+        relative h-[23rem] group transition-transform duration-300 ease-out hover:shadow-xl 
         hover:-translate-y-2`}
     >
       {project.image && (
@@ -32,12 +34,13 @@ export function ProjectCard({ project, openDetailModal }: ProjectCardProps) {
         <h2 className="text-[clamp(1.25rem,2vw,1.5rem)] font-bold dark:text-white mb-3 border-b border-gray-400 pb-2">
           {project.title}
         </h2>
-        <ul className="list-disc ml-5">
+        <ul className="list-disc">
           {project.descriptions.map((description, index) => (
             <li
               key={index}
-              className="text-gray-600 dark:text-gray-300 text-sm mb-2"
+              className="flex items-start text-gray-600 dark:text-gray-300 text-sm mb-2"
             >
+              <HiOutlineArrowRight className="w-4 h-4 mt-1.5 mr-2 text-green-500 flex-shrink-0" />
               {description}
             </li>
           ))}
