@@ -2,9 +2,9 @@
 
 import { projects } from "@/data/projects";
 import { AnimatedSection } from "../common/AnimatedSection";
-import { ProjectCard } from "../ui/projectCard";
 import { Project } from "@/types";
 import { useState } from "react";
+import { ProjectCard } from "../ui/ProjectCard";
 import { ProjectModal } from "../ui/projectModal";
 
 export function Projects() {

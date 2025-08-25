@@ -5,8 +5,8 @@ export const projects: Project[] = [
     id: "1",
     title: "No Code / Low Code 백엔드 개발 스튜디오",
     descriptions: [
-      "비즈니스 요구 사항에 맞춰 Java 기반 백엔드 서비스 코드를 자동으로 생성할 수 있는 No Code / Low Code 플랫폼",
-      "비개발자도 손쉽게 API를 설계 & 생성할 수 있도록 직관적인 UI/UX와 코드 자동화 기능을 제공",
+      "비즈니스 요구 사항에 맞춰 Java 기반 백엔드 서비스 코드를 자동으로 생성할 수 있는 No Code / Low Code 플랫폼입니다.",
+      "비개발자도 손쉽게 API를 설계 & 생성할 수 있도록 직관적인 UI/UX와 코드 자동화 기능을 제공합니다.",
     ],
     technologies: [
       "JavaScript(ES6+)",
@@ -101,8 +101,8 @@ export const projects: Project[] = [
     id: "2",
     title: "RDBMS 기반 데이터 모델링 설계 플랫폼 (ERD Tool)",
     descriptions: [
-      "데이터베이스 테이블 및 컬럼을 설계하고 시각적으로 ERD를 표현할 수 있는 플랫폼",
-      "실시간 협업과 데이터 마이그레이션 기능을 제공하여 개발 생산성을 높임",
+      "데이터베이스 테이블 및 컬럼을 설계하고 시각적으로 ERD를 표현할 수 있는 플랫폼입니다.",
+      "실시간 협업과 데이터 마이그레이션 기능을 제공하여 개발 생산성을 높입니다.",
     ],
     technologies: [
       "JavaScript(ES6+)",
