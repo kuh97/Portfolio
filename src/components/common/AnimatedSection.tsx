@@ -2,7 +2,6 @@
 
 import { motion } from "framer-motion";
 import { useInView } from "@/hooks/useInView";
-import { useEffect, useState } from "react";
 
 interface AnimatedSectionProps {
   children: React.ReactNode;
@@ -45,11 +44,11 @@ export function AnimatedSection({
   return (
     <motion.div
       ref={ref}
-      initial="hidden"
       animate={inView ? "visible" : "hidden"}
-      variants={animations[animation]}
-      transition={{ duration: 0.5, delay, ease: "easeInOut" }}
       className={className}
+      initial="hidden"
+      transition={{ duration: 0.5, delay, ease: "easeInOut" }}
+      variants={animations[animation]}
     >
       {children}
     </motion.div>

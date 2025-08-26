@@ -12,8 +12,8 @@ export function About() {
 
   return (
     <section
-      id="about"
       className={`section-padding bg-stone-200 dark:bg-gray-800/50`}
+      id="about"
     >
       <div className={`section-container`}>
         <AnimatedSection animation="fade" className={`text-center mb-16`}>
@@ -27,10 +27,10 @@ export function About() {
             >
               <div className={`relative w-64 h-80 lg:w-72 lg:h-96`}>
                 <Image
-                  src="/profile.jpg"
-                  alt="김의현 프로필 사진"
                   fill
+                  alt="김의현 프로필 사진"
                   className={`rounded-xl object-cover`}
+                  src="/profile.jpg"
                 />
               </div>
             </div>
@@ -73,21 +73,21 @@ export function About() {
 
             <AnimatedSection
               animation="fade"
-              delay={0.3}
               className={`pt-4 flex flex-wrap gap-4 justify-center lg:justify-start`}
+              delay={0.3}
             >
               <a
-                href="/resume.pdf"
-                download="김의현-이력서.pdf"
                 className={`primary-button`}
+                download="김의현-이력서.pdf"
+                href="/resume.pdf"
               >
                 <BsDownload className={`w-6 h-6 mr-3`} />
                 이력서 다운로드
               </a>
               <a
-                href="/workExperience.pdf"
-                download="김의현-경력기술서.pdf"
                 className={`primary-button`}
+                download="김의현-경력기술서.pdf"
+                href="/workExperience.pdf"
               >
                 <BsDownload className={`w-6 h-6 mr-3`} />
                 경력기술서 다운로드
