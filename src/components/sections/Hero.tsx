@@ -64,16 +64,16 @@ export function Hero() {
 
   return (
     <section
-      id="hero"
       className={`min-h-screen flex items-center justify-center relative bg-stone-100 dark:bg-transparent`}
+      id="hero"
     >
       <div className={`section-container relative z-10`}>
         <div className={`text-center max-w-4xl mx-auto`}>
           <motion.h1
-            initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.3, duration: 0.5 }}
             className={`text-4xl md:text-6xl lg:text-7xl font-bold text-gray-900 dark:text-white mb-6`}
+            initial={{ opacity: 0, y: 20 }}
+            transition={{ delay: 0.3, duration: 0.5 }}
           >
             안녕하세요,{" "}
             <span
@@ -85,10 +85,10 @@ export function Hero() {
           </motion.h1>
 
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.4, duration: 0.5 }}
             className={`mb-8`}
+            initial={{ opacity: 0, y: 20 }}
+            transition={{ delay: 0.4, duration: 0.5 }}
           >
             <h2
               className={`text-3xl md:text-3xl font-semibold text-gray-700 dark:text-gray-200 min-h-[3rem]`}
@@ -99,52 +99,52 @@ export function Hero() {
           </motion.div>
 
           <motion.p
-            initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.5, duration: 0.5 }}
             className={`text-lg text-gray-600 dark:text-gray-300 mb-12 max-w-2xl mx-auto leading-relaxed`}
+            initial={{ opacity: 0, y: 20 }}
+            transition={{ delay: 0.5, duration: 0.5 }}
           >
             {"단순함 속에서 편리함을, 편리함 속에서 즐거움을"}
           </motion.p>
 
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.7, duration: 0.5 }}
             className={`flex items-center justify-center space-x-8`}
+            initial={{ opacity: 0, y: 20 }}
+            transition={{ delay: 0.7, duration: 0.5 }}
           >
             <a
-              href={CONTACT_INFO.github}
-              target="_blank"
-              rel="noopener noreferrer"
               className={`contact-icon`}
+              href={CONTACT_INFO.github}
+              rel="noopener noreferrer"
+              target="_blank"
             >
               <BsGithub className={`w-6 h-6`} />
             </a>
 
             <a
-              href={CONTACT_INFO.linkedin}
-              target="_blank"
-              rel="noopener noreferrer"
               className={`contact-icon`}
+              href={CONTACT_INFO.linkedin}
+              rel="noopener noreferrer"
+              target="_blank"
             >
               <BsLinkedin className={`w-6 h-6`} />
             </a>
 
             <a
-              href={CONTACT_INFO.blog}
-              target="_blank"
-              rel="noopener noreferrer"
               className={`contact-icon`}
+              href={CONTACT_INFO.blog}
+              rel="noopener noreferrer"
+              target="_blank"
             >
               <SiTistory className={`w-6 h-6`} />
             </a>
 
             <div className={`relative`}>
               <button
-                onClick={handleEmailClick}
-                className={`contact-icon`}
                 aria-label="이메일 복사하기"
+                className={`contact-icon`}
+                onClick={handleEmailClick}
               >
                 {isEmailCopied ? (
                   <HiCheck className={`w-6 h-6 text-emerald-400/70`} />
@@ -155,11 +155,11 @@ export function Hero() {
               <AnimatePresence>
                 {isEmailCopied && (
                   <motion.div
-                    initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: 10 }}
-                    transition={{ duration: 0.2 }}
                     className={`absolute top-16 left-1/2 -translate-x-1/2 px-3 py-1.5 text-sm bg-gray-900 text-white dark:bg-white dark:text-gray-900 rounded-lg shadow-lg whitespace-nowrap`}
+                    exit={{ opacity: 0, y: 10 }}
+                    initial={{ opacity: 0, y: 10 }}
+                    transition={{ duration: 0.2 }}
                   >
                     복사되었습니다!
                   </motion.div>
@@ -170,13 +170,12 @@ export function Hero() {
         </div>
       </div>
 
-      {/* 스크롤 다운 버튼 */}
       <motion.button
-        initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
+        className={`absolute bottom-8 left-1/2 transform -translate-x-1/2 text-emerald-500/80 transition-colors animate-bounce`}
+        initial={{ opacity: 0 }}
         transition={{ delay: 1, duration: 0.5 }}
         onClick={scrollToNext}
-        className={`absolute bottom-8 left-1/2 transform -translate-x-1/2 text-emerald-500/80 transition-colors animate-bounce`}
       >
         <HiArrowDown className={`w-8 h-8`} />
       </motion.button>

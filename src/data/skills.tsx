@@ -3,115 +3,115 @@ import Image from "next/image";
 
 const ICONS = {
   CSS: (
-    <Image src={"/asserts/CSS.svg"} alt={"CSS Icon"} width={36} height={36} />
+    <Image alt={"CSS Icon"} height={36} src={"/asserts/CSS.svg"} width={36} />
   ),
   FIGMA: (
     <Image
-      src={"/asserts/Figma.svg"}
       alt={"Figma Icon"}
-      width={36}
       height={36}
+      src={"/asserts/Figma.svg"}
+      width={36}
     />
   ),
   GITHUB: (
     <Image
-      src={"/asserts/GitHub.svg"}
       alt={"GitHub Icon"}
-      width={36}
       height={36}
+      src={"/asserts/GitHub.svg"}
+      width={36}
     />
   ),
   GITLAB: (
     <Image
-      src={"/asserts/GitLab.svg"}
       alt={"GitLab Icon"}
-      width={36}
       height={36}
+      src={"/asserts/GitLab.svg"}
+      width={36}
     />
   ),
   HTML: (
-    <Image src={"/asserts/HTML.svg"} alt={"HTML Icon"} width={36} height={36} />
+    <Image alt={"HTML Icon"} height={36} src={"/asserts/HTML.svg"} width={36} />
   ),
   JAVA: (
-    <Image src={"/asserts/Java.svg"} alt={"Java Icon"} width={36} height={36} />
+    <Image alt={"Java Icon"} height={36} src={"/asserts/Java.svg"} width={36} />
   ),
   JAVASCRIPT: (
     <Image
-      src={"/asserts/JavaScript.svg"}
       alt={"JavaScript Icon"}
-      width={36}
       height={36}
+      src={"/asserts/JavaScript.svg"}
+      width={36}
     />
   ),
   NEXTJS: (
     <Image
-      src={"/asserts/NextJS.svg"}
       alt={"NextJS Icon"}
-      width={36}
       height={36}
+      src={"/asserts/NextJS.svg"}
+      width={36}
     />
   ),
   REACT: (
     <Image
-      src={"/asserts/React.svg"}
       alt={"React Icon"}
-      width={36}
       height={36}
+      src={"/asserts/React.svg"}
+      width={36}
     />
   ),
   TAILWIND: (
     <Image
-      src={"/asserts/TailwindCSS.svg"}
       alt={"TailwindCSS Icon"}
-      width={36}
       height={36}
+      src={"/asserts/TailwindCSS.svg"}
+      width={36}
     />
   ),
   TYPESCRIPT: (
     <Image
-      src={"/asserts/TypeScript.svg"}
       alt={"TypeScript Icon"}
-      width={36}
       height={36}
+      src={"/asserts/TypeScript.svg"}
+      width={36}
     />
   ),
   VERCEL: (
     <Image
-      src={"/asserts/Vercel.svg"}
       alt={"Vercel Icon"}
-      width={36}
       height={36}
+      src={"/asserts/Vercel.svg"}
+      width={36}
     />
   ),
   ZUSTAND: (
     <Image
-      src={"/asserts/Zustand.png"}
       alt={"Zustnad Icon"}
-      width={36}
       height={36}
+      src={"/asserts/Zustand.png"}
+      width={36}
     />
   ),
   ORACLE: (
     <Image
-      src={"/asserts/Oracle.svg"}
       alt={"Oracle Icon"}
-      width={36}
       height={36}
+      src={"/asserts/Oracle.svg"}
+      width={36}
     />
   ),
   SLACK: (
     <Image
-      src={"/asserts/Slack.svg"}
       alt={"Slack Icon"}
-      width={36}
       height={36}
+      src={"/asserts/Slack.svg"}
+      width={36}
     />
   ),
   MOBX: (
-    <Image src={"/asserts/MobX.svg"} alt={"MobX Icon"} width={36} height={36} />
+    <Image alt={"MobX Icon"} height={36} src={"/asserts/MobX.svg"} width={36} />
   ),
   JEST: (
-    <Image src={"/asserts/Jest.svg"} alt={"Jest Icon"} width={36} height={36} />
+    <Image alt={"Jest Icon"} height={36} src={"/asserts/Jest.svg"} width={36} />
   ),
 };
 

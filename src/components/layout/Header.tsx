@@ -50,8 +50,8 @@ export function Header() {
             {NAVIGATION_ITEMS.map((item) => (
               <button
                 key={item.id}
-                onClick={() => handleNavClick(item.id)}
                 className={`text-black dark:text-white font-medium transition-all duration-300 transform hover:-translate-y-2 hover:underline hover:underline-offset-4 p-2`}
+                onClick={() => handleNavClick(item.id)}
               >
                 {item.label}
               </button>
@@ -63,9 +63,9 @@ export function Header() {
             <ThemeToggle />
 
             <button
-              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className={`md:hidden p-2 rounded-2xl text-black dark:text-white hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors`}
               aria-label="메뉴 버튼"
+              className={`md:hidden p-2 rounded-2xl text-black dark:text-white hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors`}
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             >
               {isMobileMenuOpen ? (
                 <HiX className={`w-6 h-6`} />
@@ -80,19 +80,19 @@ export function Header() {
         <AnimatePresence>
           {isMobileMenuOpen && (
             <motion.nav
-              initial={{ opacity: 0, height: 0 }}
               animate={{ opacity: 1, height: "auto" }}
-              exit={{ opacity: 0, height: 0 }}
               className={`md:hidden border-t border-gray-200 dark:border-gray-700 ${
                 isScrolled ? "bg-transparent" : "bg-emerald-300/30"
               }`}
+              exit={{ opacity: 0, height: 0 }}
+              initial={{ opacity: 0, height: 0 }}
             >
               <div className={`py-4 space-y-2 ${!isScrolled && "mx-3"}`}>
                 {NAVIGATION_ITEMS.map((item) => (
                   <button
                     key={item.id}
-                    onClick={() => handleNavClick(item.id)}
                     className={`block w-full rounded-3xl text-center py-2 text-black dark:text-white hover:bg-gray-50 dark:hover:text-black transition-colors font-medium`}
+                    onClick={() => handleNavClick(item.id)}
                   >
                     {item.label}
                   </button>

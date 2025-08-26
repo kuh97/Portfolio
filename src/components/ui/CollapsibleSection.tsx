@@ -14,60 +14,82 @@ export function CollapsibleSection({ task }: CollapsibleSectionProps) {
 
   return (
     <div
+      className={`border border-gray-200 dark:border-gray-700 rounded-xl overflow-hidden`}
       id="CollapsibleSection"
-      className="border border-gray-200 dark:border-gray-700 rounded-xl overflow-hidden"
     >
       <button
+        className={`w-full px-4 py-4 bg-gray-50 dark:bg-gray-800 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors flex items-center justify-between text-left`}
         onClick={() => setIsOpen(!isOpen)}
-        className="w-full px-4 py-4 bg-gray-50 dark:bg-gray-800 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors flex items-center justify-between text-left"
       >
-        <h3 className="font-semibold text-gray-900 dark:text-white">
+        <h3 className={`font-semibold text-gray-900 dark:text-white`}>
           {task.title}
         </h3>
         <motion.div
           animate={{ rotate: isOpen ? 180 : 0 }}
           transition={{ duration: 0.2 }}
         >
-          <HiChevronDown className="w-5 h-5" />
+          <HiChevronDown className={`w-5 h-5`} />
         </motion.div>
       </button>
 
       <AnimatePresence>
         {isOpen && (
           <motion.div
-            initial={{ height: 0, opacity: 0 }}
             animate={{ height: "auto", opacity: 1 }}
+            className={`overflow-hidden`}
             exit={{ height: 0, opacity: 0 }}
+            initial={{ height: 0, opacity: 0 }}
             transition={{ duration: 0.3, ease: "easeInOut" }}
-            className="overflow-hidden"
           >
-            <div className="p-4 bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-700 space-y-6">
-              <div className="flex space-x-4">
-                <div className="w-1 h-auto bg-blue-500 rounded-full my-1"></div>
-                <div className="flex-1">
-                  <h4 className="flex items-center text-lg font-semibold text-gray-800 dark:text-gray-200">
+            <div
+              className={`p-4 bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-700 space-y-6`}
+            >
+              <div className={`flex space-x-4`}>
+                <div
+                  className={`w-1 h-auto bg-blue-500 rounded-full my-1`}
+                ></div>
+                <div className={`flex-1`}>
+                  <h4
+                    className={`flex items-center text-lg font-semibold text-gray-800 dark:text-gray-200`}
+                  >
                     이슈
                   </h4>
-                  <div className="flex items-start mt-2 text-gray-700 dark:text-gray-300">
-                    <HiOutlineArrowRight className="w-4 h-4 mt-1.5 mr-2 text-blue-500 flex-shrink-0" />
-                    <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
+                  <div
+                    className={`flex items-start mt-2 text-gray-700 dark:text-gray-300`}
+                  >
+                    <HiOutlineArrowRight
+                      className={`w-4 h-4 mt-1.5 mr-2 text-blue-500 flex-shrink-0`}
+                    />
+                    <p
+                      className={`text-gray-700 dark:text-gray-300 leading-relaxed`}
+                    >
                       {task.issue}
                     </p>
                   </div>
                 </div>
               </div>
 
-              <div className="flex space-x-4">
-                <div className="w-1 h-auto bg-green-500 rounded-full my-1"></div>
-                <div className="flex-1">
-                  <h4 className="flex items-center text-lg font-semibold text-gray-800 dark:text-gray-200">
+              <div className={`flex space-x-4`}>
+                <div
+                  className={`w-1 h-auto bg-green-500 rounded-full my-1`}
+                ></div>
+                <div className={`flex-1`}>
+                  <h4
+                    className={`flex items-center text-lg font-semibold text-gray-800 dark:text-gray-200`}
+                  >
                     해결
                   </h4>
-                  <ul className="list-disc list-inside mt-2 space-y-1 text-gray-700 dark:text-gray-300">
+                  <ul
+                    className={`list-disc list-inside mt-2 space-y-1 text-gray-700 dark:text-gray-300`}
+                  >
                     {task.solutions.map((solution, index) => (
                       <li key={index} className={`flex items-start`}>
-                        <HiOutlineArrowRight className="w-4 h-4 mt-1.5 mr-2 text-green-500 flex-shrink-0" />
-                        <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
+                        <HiOutlineArrowRight
+                          className={`w-4 h-4 mt-1.5 mr-2 text-green-500 flex-shrink-0`}
+                        />
+                        <p
+                          className={`text-gray-700 dark:text-gray-300 leading-relaxed`}
+                        >
                           {solution}
                         </p>
                       </li>
@@ -76,17 +98,27 @@ export function CollapsibleSection({ task }: CollapsibleSectionProps) {
                 </div>
               </div>
 
-              <div className="flex space-x-4">
-                <div className="w-1 h-auto bg-purple-500 rounded-full my-1"></div>
-                <div className="flex-1">
-                  <h4 className="flex items-center text-lg font-semibold text-gray-800 dark:text-gray-200">
+              <div className={`flex space-x-4`}>
+                <div
+                  className={`w-1 h-auto bg-purple-500 rounded-full my-1`}
+                ></div>
+                <div className={`flex-1`}>
+                  <h4
+                    className={`flex items-center text-lg font-semibold text-gray-800 dark:text-gray-200`}
+                  >
                     성과
                   </h4>
-                  <ul className="list-disc list-inside mt-2 space-y-1 text-gray-700 dark:text-gray-300">
+                  <ul
+                    className={`list-disc list-inside mt-2 space-y-1 text-gray-700 dark:text-gray-300`}
+                  >
                     {task.achievements.map((achievement, index) => (
                       <li key={index} className={`flex items-start`}>
-                        <HiOutlineArrowRight className="w-4 h-4 mt-1.5 mr-2 text-purple-500 flex-shrink-0" />
-                        <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
+                        <HiOutlineArrowRight
+                          className={`w-4 h-4 mt-1.5 mr-2 text-purple-500 flex-shrink-0`}
+                        />
+                        <p
+                          className={`text-gray-700 dark:text-gray-300 leading-relaxed`}
+                        >
                           {achievement}
                         </p>
                       </li>

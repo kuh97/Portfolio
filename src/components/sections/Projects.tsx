@@ -23,8 +23,8 @@ export function Projects() {
 
   return (
     <section
-      id="projects"
       className={`section-padding bg-stone-200 dark:bg-gray-900`}
+      id="projects"
     >
       <div className={`section-container`}>
         <AnimatedSection animation="fade" className={`text-center mb-16`}>
@@ -34,13 +34,13 @@ export function Projects() {
         <div className={`grid gap-8 md:grid-cols-2 lg:grid-cols-3`}>
           {projects.map((project) => (
             <AnimatedSection
+              key={project.id}
               animation="slide-up"
               delay={parseFloat(project.id) * 0.1}
-              key={project.id}
             >
               <ProjectCard
-                project={project}
                 openDetailModal={() => handleOpenModal(project)}
+                project={project}
               />
             </AnimatedSection>
           ))}

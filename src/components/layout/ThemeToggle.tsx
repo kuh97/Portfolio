@@ -16,9 +16,9 @@ export function ThemeToggle() {
 
   return (
     <button
-      onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-      className={`p-2 rounded-2xl hover:bg-gray-900/40 dark:hover:bg-white/40 transition-colors`}
       aria-label="테마 변경"
+      className={`p-2 rounded-2xl hover:bg-gray-900/40 dark:hover:bg-white/40 transition-colors`}
+      onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
     >
       {theme === "dark" ? (
         <BsSunFill className={`w-5 h-5 text-yellow-300`} />
