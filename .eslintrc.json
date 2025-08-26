@@ -6,7 +6,7 @@
     "plugin:prettier/recommended"
   ],
   "rules": {
-    "prettier/prettier": "error",
+    "prettier/prettier": ["error", { "endOfLine": "auto" }],
     "react/display-name": "off",
     "react/no-unescaped-entities": "off",
     "react/jsx-sort-props": [
@@ -20,12 +20,7 @@
     ],
     "no-unused-vars": "warn",
     "@typescript-eslint/no-unused-vars": "warn",
-    "no-console": [
-      "warn",
-      {
-        "allow": ["warn", "error"]
-      }
-    ],
+    "no-console": ["warn", { "allow": ["warn", "error"] }],
     "prefer-const": "error"
   }
 }
