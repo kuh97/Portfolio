@@ -31,8 +31,19 @@ export function ProjectCard({ project, openDetailModal }: ProjectCardProps) {
       )}
 
       <div className={`p-6 flex-grow flex flex-col`}>
+        <div className={`flex items-center mb-2`}>
+          <div
+            className={`px-2 py-1 bg-emerald-300/30 text-black dark:text-white rounded-full text-sm font-light mr-2`}
+          >
+            {project.info.name}
+          </div>
+          <span className={`text-gray-600 dark:text-gray-400 text-sm`}>
+            {project.info.period}
+          </span>
+        </div>
+
         <h2
-          className={`text-[clamp(1.25rem,2vw,1.5rem)] font-bold dark:text-white mb-3 border-b border-gray-400 pb-2`}
+          className={`text-[clamp(1.25rem,1.8vw,1.3rem)] font-semibold dark:text-white mb-3 border-b border-gray-400 pb-2`}
         >
           {project.title}
         </h2>
@@ -40,7 +51,7 @@ export function ProjectCard({ project, openDetailModal }: ProjectCardProps) {
           {project.descriptions.map((description, index) => (
             <li
               key={index}
-              className={`flex items-start text-gray-600 dark:text-gray-300 text-sm mb-2`}
+              className={`flex items-start text-gray-700 dark:text-gray-300 text-sm mb-2`}
             >
               <HiOutlineArrowRight
                 className={`w-4 h-4 mt-1.5 mr-2 text-green-500 flex-shrink-0`}

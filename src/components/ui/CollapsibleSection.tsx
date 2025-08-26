@@ -14,11 +14,11 @@ export function CollapsibleSection({ task }: CollapsibleSectionProps) {
 
   return (
     <div
-      className={`border border-gray-200 dark:border-gray-700 rounded-xl overflow-hidden`}
+      className={`border border-stone-400/70 dark:border-gray-500/60 rounded-xl overflow-hidden`}
       id="CollapsibleSection"
     >
       <button
-        className={`w-full px-4 py-4 bg-gray-50 dark:bg-gray-800 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors flex items-center justify-between text-left`}
+        className={`w-full px-4 py-4 bg-stone-200 dark:bg-gray-700 hover:bg-stone-300 dark:hover:bg-gray-700 transition-colors flex items-center justify-between text-left`}
         onClick={() => setIsOpen(!isOpen)}
       >
         <h3 className={`font-semibold text-gray-900 dark:text-white`}>
@@ -42,7 +42,7 @@ export function CollapsibleSection({ task }: CollapsibleSectionProps) {
             transition={{ duration: 0.3, ease: "easeInOut" }}
           >
             <div
-              className={`p-4 bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-700 space-y-6`}
+              className={`p-4 bg-stone-50 dark:bg-gray-900 border-t border-gray-200 dark:border-gray-700 space-y-6`}
             >
               <div className={`flex space-x-4`}>
                 <div

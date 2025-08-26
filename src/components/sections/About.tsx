@@ -4,6 +4,7 @@ import Image from "next/image";
 import { BsDownload } from "react-icons/bs";
 import { AnimatedSection } from "../common/AnimatedSection";
 import { useMediaQuery } from "@/hooks/useMediaQuery";
+import { SlEmotsmile } from "react-icons/sl";
 
 const keywords = ["사용자 경험(UX)", "협업 & 소통", "도전", "긍정적 사고"];
 
@@ -41,10 +42,12 @@ export function About() {
             className={`space-y-6 text-center lg:text-left`}
           >
             <h3
-              className={`text-2xl font-semibold text-gray-900 dark:text-white mb-4`}
+              className={`flex justify-center lg:justify-start items-center text-2xl font-semibold text-gray-900 dark:text-white mb-4`}
             >
               안녕하세요! 프론트엔드 개발자 김의현입니다
-              <span className={`animate-waving-hand`}>👋</span>
+              <SlEmotsmile
+                className={`ml-1 w-6 h-6 text-blue-700 dark:text-yellow-300`}
+              />
             </h3>
             <p className={`text-gray-600 dark:text-gray-300 leading-relaxed`}>
               사용자 경험과 협업의 가치를 중요하게 생각하는 프론트엔드 개발자
