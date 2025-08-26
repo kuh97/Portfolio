@@ -4,6 +4,7 @@ import { useEffect } from "react";
 import { Project } from "@/types";
 import { IoMdClose } from "react-icons/io";
 import { FcCalendar } from "react-icons/fc";
+import { FaBuilding, FaUsers, FaUser } from "react-icons/fa";
 import { CollapsibleSection } from "./CollapsibleSection";
 import { HiOutlineArrowRight } from "react-icons/hi";
 
@@ -31,6 +32,19 @@ export function ProjectModal({ project, onClose }: ProjectModalProps) {
 
   if (!project) return null;
 
+  const renderIcon = () => {
+    switch (project.info.type) {
+      case "Company":
+        return <FaBuilding className={`w-4 h-4 mr-2 text-blue-500`} />;
+      case "Team":
+        return <FaUsers className={`w-4 h-4 mr-1 text-blue-500`} />;
+      case "Personal":
+        return <FaUser className={`w-4 h-4 mr-1 text-blue-500`} />;
+      default:
+        return null;
+    }
+  };
+
   return (
     <div
       className={`fixed inset-0 bg-black/50 backdrop-blur-sm flex justify-center items-center z-50`}
@@ -38,7 +52,7 @@ export function ProjectModal({ project, onClose }: ProjectModalProps) {
       onClick={onClose}
     >
       <div
-        className={`bg-stone-200 dark:bg-gray-800 rounded-lg p-8 m-4 max-w-3xl w-full relative max-h-[90vh] overflow-y-auto`}
+        className={`bg-stone-100 dark:bg-gray-800 rounded-lg p-8 m-4 max-w-3xl w-full relative max-h-[90vh] overflow-y-auto`}
         onClick={(e) => e.stopPropagation()}
       >
         <div className={`flex items-start justify-between mb-6`}>
@@ -60,13 +74,24 @@ export function ProjectModal({ project, onClose }: ProjectModalProps) {
           <div
             className={`flex items-center text-sm text-gray-600 dark:text-gray-400`}
           >
-            <FcCalendar className={`w-4 h-4 mr-1`} />
+            {renderIcon()}
             <span
-              className={`font-semibold mr-2 text-gray-700 dark:text-gray-300`}
+              className={`font-semibold text-lg mr-2 text-gray-700 dark:text-gray-300`}
             >
-              기간 :
+              {project.info.name}
             </span>
-            <span>{project.period}</span>
+            {project.info.members && (
+              <span className={`text-gray-600 dark:text-gray-400`}>
+                ({project.info.members})
+              </span>
+            )}
+          </div>
+
+          <div
+            className={`flex items-center text-sm text-gray-600 dark:text-gray-400`}
+          >
+            <FcCalendar className={`w-4 h-4 mr-2`} />
+            <span>{project.info.period}</span>
           </div>
 
           <div>
@@ -101,7 +126,7 @@ export function ProjectModal({ project, onClose }: ProjectModalProps) {
               {project.technologies.map((tech, index) => (
                 <span
                   key={index}
-                  className={`bg-stone-300 text-gray-800 dark:bg-gray-700 dark:text-gray-200 px-3 py-1 rounded-full text-sm`}
+                  className={`bg-stone-200 text-gray-800 dark:bg-gray-700 dark:text-gray-200 px-3 py-1 rounded-full text-sm`}
                 >
                   {tech}
                 </span>

@@ -8,13 +8,22 @@ export interface TaskItem {
   achievements: string[];
 }
 
+export type ProjectType = "Company" | "Team" | "Personal";
+
+export interface ProjectInfo {
+  type: ProjectType;
+  name: string;
+  period: string;
+  members?: string;
+}
+
 export interface Project {
   id: string;
   title: string;
+  info: ProjectInfo;
   descriptions: string[];
   technologies: string[];
   tasks: TaskItem[];
-  period?: string;
   image?: string;
   githubUrl?: string;
   liveUrl?: string;

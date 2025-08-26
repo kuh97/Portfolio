@@ -22,7 +22,12 @@ export const projects: Project[] = [
       "Slack",
       "Google Sheet",
     ],
-    period: "2022.09 ~ 2024.11",
+    info: {
+      type: "Company",
+      name: "(주) 티맥스클라우드",
+      members: "10명의 개발자로 구성, 주로 FE 담당",
+      period: "2022.09 ~ 2024.11",
+    },
     tasks: [
       {
         id: "1",
@@ -117,7 +122,12 @@ export const projects: Project[] = [
       "Figma",
       "Slack",
     ],
-    period: "2022.02 ~ 2022.09",
+    info: {
+      type: "Company",
+      name: "티맥스가이아",
+      members: "7명의 개발자로 구성, 주로 FE 담당",
+      period: "2022.02 ~ 2022.09",
+    },
     tasks: [
       {
         id: "1",
