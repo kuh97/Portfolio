@@ -4,8 +4,8 @@ import { projects } from "@/data/projects";
 import { AnimatedSection } from "../common/AnimatedSection";
 import { Project } from "@/types";
 import { useState } from "react";
-import { ProjectCard } from "../ui/projectCard";
-import { ProjectModal } from "../ui/projectModal";
+import { ProjectCard } from "../ui/ProjectCard";
+import { ProjectModal } from "../ui/ProjectModal";
 
 export function Projects() {
   const [isModalOpen, setIsModalOpen] = useState(false);
