@@ -113,6 +113,14 @@ const ICONS = {
   JEST: (
     <Image alt={"Jest Icon"} height={36} src={"/asserts/Jest.svg"} width={36} />
   ),
+  TIBERO: (
+    <Image
+      alt={"Tibero Icon"}
+      height={36}
+      src={"/asserts/Tibero.svg"}
+      width={36}
+    />
+  ),
 };
 
 export const skills: SkillsData = {
@@ -131,7 +139,7 @@ export const skills: SkillsData = {
   ],
   Backend: [{ id: 10, name: "Java", icon: ICONS.JAVA }],
   Database: [
-    { id: 11, name: "Tibero", icon: "" },
+    { id: 11, name: "Tibero", icon: ICONS.TIBERO },
     { id: 12, name: "Oracle", icon: ICONS.ORACLE },
   ],
   Others: [
