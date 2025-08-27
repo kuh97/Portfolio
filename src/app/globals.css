@@ -28,7 +28,7 @@
 }
 
 .primary-button {
-  @apply inline-flex items-center justify-center px-6 py-3 bg-emerald-500/70 text-white rounded-lg transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl;
+  @apply inline-flex items-center justify-center bg-emerald-500/70 text-white transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl;
 }
 
 .primary-button:hover {

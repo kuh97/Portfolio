@@ -21,6 +21,7 @@ export interface Project {
   id: string;
   title: string;
   info: ProjectInfo;
+  summary: string;
   descriptions: string[];
   technologies: string[];
   tasks: TaskItem[];

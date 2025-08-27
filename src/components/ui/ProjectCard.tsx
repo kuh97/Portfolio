@@ -31,9 +31,9 @@ export function ProjectCard({ project, openDetailModal }: ProjectCardProps) {
       )}
 
       <div className={`p-6 flex-grow flex flex-col`}>
-        <div className={`flex items-center mb-2`}>
+        <div className={`flex items-center mb-3`}>
           <div
-            className={`px-2 py-1 bg-emerald-300/30 text-black dark:text-white rounded-full text-sm font-light mr-2`}
+            className={`px-2 py-1 bg-emerald-300/50 dark:bg-emerald-400/40 text-gray-600 dark:text-gray-200 rounded-full text-sm font-semibold mr-2`}
           >
             {project.info.name}
           </div>
@@ -43,23 +43,18 @@ export function ProjectCard({ project, openDetailModal }: ProjectCardProps) {
         </div>
 
         <h2
-          className={`text-[clamp(1.25rem,1.8vw,1.3rem)] font-semibold dark:text-white mb-3 border-b border-gray-400 pb-2`}
+          className={`text-[clamp(1.25rem,1.8vw,1.3rem)] font-semibold dark:text-white mb-1 pb-2`}
         >
           {project.title}
         </h2>
-        <ul className={`list-disc`}>
-          {project.descriptions.map((description, index) => (
-            <li
-              key={index}
-              className={`flex items-start text-gray-700 dark:text-gray-300 text-sm mb-2`}
-            >
-              <HiOutlineArrowRight
-                className={`w-4 h-4 mt-1.5 mr-2 text-green-500 flex-shrink-0`}
-              />
-              {description}
-            </li>
-          ))}
-        </ul>
+        <div
+          className={`flex items-start text-gray-700 dark:text-gray-300 text-sm mb-2`}
+        >
+          <HiOutlineArrowRight
+            className={`w-4 h-4 mt-1.5 mr-2 text-green-500 flex-shrink-0`}
+          />
+          {project.summary}
+        </div>
       </div>
 
       <div
@@ -70,12 +65,15 @@ export function ProjectCard({ project, openDetailModal }: ProjectCardProps) {
           {project.title}
         </h3>
         <div className={`w-2/3 flex flex-col gap-3`}>
-          <button className={`primary-button`} onClick={openDetailModal}>
+          <button
+            className={`primary-button px-6 py-3 rounded-lg`}
+            onClick={openDetailModal}
+          >
             자세히보기
           </button>
           {project.githubUrl && (
             <a
-              className={`primary-button`}
+              className={`primary-button px-6 py-3 rounded-lg`}
               href={project.githubUrl}
               rel="noopener noreferrer"
               target="_blank"

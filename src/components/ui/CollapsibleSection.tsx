@@ -18,7 +18,7 @@ export function CollapsibleSection({ task }: CollapsibleSectionProps) {
       id="CollapsibleSection"
     >
       <button
-        className={`w-full px-4 py-4 bg-stone-200 dark:bg-gray-700 hover:bg-stone-300 dark:hover:bg-gray-700 transition-colors flex items-center justify-between text-left`}
+        className={`w-full px-4 py-4 bg-stone-200 dark:bg-gray-700 hover:bg-stone-300 dark:hover:bg-gray-800 transition-colors flex items-center justify-between text-left`}
         onClick={() => setIsOpen(!isOpen)}
       >
         <h3 className={`font-semibold text-gray-900 dark:text-white`}>

@@ -80,7 +80,7 @@ export function About() {
               delay={0.3}
             >
               <a
-                className={`primary-button`}
+                className={`primary-button px-6 py-3 rounded-lg`}
                 download="김의현-이력서.pdf"
                 href="/resume.pdf"
               >
@@ -88,7 +88,7 @@ export function About() {
                 이력서 다운로드
               </a>
               <a
-                className={`primary-button`}
+                className={`primary-button px-6 py-3 rounded-lg`}
                 download="김의현-경력기술서.pdf"
                 href="/workExperience.pdf"
               >
