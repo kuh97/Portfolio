@@ -7,10 +7,58 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model Post {
-  id        Int      @id @default(autoincrement())
-  title     String
-  content   String?
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
+enum ProjectType {
+  Company
+  Team
+  Personal
+}
+
+enum SkillCategory {
+  Frontend
+  Backend
+  Database
+  Others
+}
+
+model Project {
+  id String @id
+  title String
+  summary String
+  descriptions String[] @default([])
+  technologies String[] @default([])
+  image String?
+  githubUrl String?
+  liveUrl String?
+
+  info ProjectInfo?
+  tasks TaskItem[]
+}
+
+model ProjectInfo {
+  id String @id @default(uuid())
+  type ProjectType
+  name String
+  period String
+  members String
+
+  projectId String @unique
+  project Project @relation(fields: [projectId], references: [id])
+}
+
+model TaskItem {
+  id String @id
+  title String
+  issue String
+  solutions String[] @default([])
+  achievements String[] @default([])
+
+  projectId String
+  project Project @relation(fields: [projectId], references: [id])
+}
+
+model Skill {
+  id Int @id @default(autoincrement())
+  name String @unique
+  category SkillCategory
+  iconUrl String
 }
