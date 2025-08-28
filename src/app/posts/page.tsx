@@ -1,14 +1,14 @@
-// app/posts/page.tsx
 import prisma from "@/lib/prisma";
 
 // 이 함수는 서버에서만 실행됩니다.
 async function getPosts() {
-  const posts = await prisma.post.findMany({
-    orderBy: {
-      createdAt: "desc",
-    },
-  });
-  return posts;
+  // const posts = await prisma.post.findMany({
+  //   orderBy: {
+  //     createdAt: "desc",
+  //   },
+  // });
+  // return posts;
+  return [];
 }
 
 // 이 페이지는 서버 사이드 렌더링(SSR)됩니다.
