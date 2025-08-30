@@ -1,5 +1,3 @@
-import { JSX } from "react";
-
 export interface TaskItem {
   id: string;
   title: string;
@@ -20,20 +18,20 @@ export interface ProjectInfo {
 export interface Project {
   id: string;
   title: string;
-  info: ProjectInfo;
+  info: ProjectInfo | null;
   summary: string;
   descriptions: string[];
   technologies: string[];
   tasks: TaskItem[];
-  image?: string;
-  githubUrl?: string;
-  liveUrl?: string;
+  image?: string | null;
+  githubUrl?: string | null;
+  liveUrl?: string | null;
 }
 
 export interface Skill {
   id: number;
   name: string;
-  icon: JSX.Element | "";
+  icon: string;
 }
 
 export interface SkillsData {
@@ -51,15 +49,6 @@ export interface ContactInfo {
   linkedin?: string;
   blog?: string;
 }
-
-export const CONTACT_INFO: ContactInfo = {
-  email: "rladml91gus@naver.com",
-  phone: "010-8310-8853",
-  github: "https://github.com/kuh97",
-  linkedin:
-    "https://www.linkedin.com/in/%EC%9D%98%ED%98%84-%EA%B9%80-64b608335/",
-  blog: "https://kuh97.tistory.com/",
-};
 
 export const NAVIGATION_ITEMS = [
   { id: "about", label: "about" },

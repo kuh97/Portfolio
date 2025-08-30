@@ -8,8 +8,20 @@ import { SlEmotsmile } from "react-icons/sl";
 
 const keywords = ["사용자 경험(UX)", "협업 & 소통", "도전", "긍정적 사고"];
 
-export function About() {
+interface AboutProps {
+  aboutData?: {
+    profileImageUrl?: string | null;
+    resumeUrl?: string | null;
+    workExperienceUrl?: string | null;
+  };
+}
+
+export function About({ aboutData }: AboutProps) {
   const isLarge = useMediaQuery("(min-width: 1024px)");
+
+  if (!aboutData) {
+    return null;
+  }
 
   return (
     <section
@@ -18,24 +30,27 @@ export function About() {
     >
       <div className={`section-container`}>
         <AnimatedSection animation="fade" className={`text-center mb-16`}>
-          <h2 className={`section-header text-3xl md:text-4xl `}>About Me</h2>
+          <h2 className={`section-header text-3xl md:text-4xl`}>About Me</h2>
         </AnimatedSection>
 
         <div className={`grid lg:grid-cols-2 gap-12 items-center`}>
-          <AnimatedSection animation={isLarge ? "slide-left" : "slide-up"}>
-            <div
-              className={`relative mx-auto w-fit bg-emerald-300/40 dark:bg-emerald-200/60 p-4 rounded-2xl shadow-lg`}
-            >
-              <div className={`relative w-64 h-80 lg:w-72 lg:h-96`}>
-                <Image
-                  fill
-                  alt="김의현 프로필 사진"
-                  className={`rounded-xl object-cover`}
-                  src="/profile.jpg"
-                />
+          {aboutData.profileImageUrl && (
+            <AnimatedSection animation={isLarge ? "slide-left" : "slide-up"}>
+              <div
+                className={`relative mx-auto w-fit bg-emerald-300/40 dark:bg-emerald-200/60 p-4 rounded-2xl shadow-lg`}
+              >
+                <div className={`relative w-64 h-80 lg:w-72 lg:h-96`}>
+                  <Image
+                    fill
+                    alt="김의현 프로필 사진"
+                    className={`rounded-xl object-cover`}
+                    sizes="(max-width: 1024px) 256px, 288px"
+                    src={aboutData.profileImageUrl}
+                  />
+                </div>
               </div>
-            </div>
-          </AnimatedSection>
+            </AnimatedSection>
+          )}
 
           <AnimatedSection
             animation={isLarge ? "slide-right" : "slide-up"}
@@ -80,19 +95,18 @@ export function About() {
               delay={0.3}
             >
               <a
-                className={`primary-button px-6 py-3 rounded-lg`}
-                download="김의현-이력서.pdf"
-                href="/resume.pdf"
+                className="primary-button px-6 py-3 rounded-lg"
+                href="/api/download/resume"
               >
-                <BsDownload className={`w-6 h-6 mr-3`} />
+                <BsDownload className="w-6 h-6 mr-3" />
                 이력서 다운로드
               </a>
+
               <a
-                className={`primary-button px-6 py-3 rounded-lg`}
-                download="김의현-경력기술서.pdf"
-                href="/workExperience.pdf"
+                className="primary-button px-6 py-3 rounded-lg"
+                href="/api/download/workExperience"
               >
-                <BsDownload className={`w-6 h-6 mr-3`} />
+                <BsDownload className="w-6 h-6 mr-3" />
                 경력기술서 다운로드
               </a>
             </AnimatedSection>

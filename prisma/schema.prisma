@@ -57,8 +57,21 @@ model TaskItem {
 }
 
 model Skill {
-  id Int @id @default(autoincrement())
+  id Int @id
   name String @unique
   category SkillCategory
   iconUrl String
+}
+
+model User {
+  id String @id @default(uuid())
+  name String
+  email String?
+  phone String?
+  linkedin String?
+  blog String?
+  github String?
+  profileImageUrl String?
+  resumeUrl String?
+  workExperienceUrl String?
 }

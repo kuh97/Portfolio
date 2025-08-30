@@ -1,13 +1,12 @@
 "use client";
 
-import { projects } from "@/data/projects";
 import { AnimatedSection } from "../common/AnimatedSection";
 import { Project } from "@/types";
 import { useState } from "react";
 import { ProjectCard } from "../ui/ProjectCard";
 import { ProjectModal } from "../ui/ProjectModal";
 
-export function Projects() {
+export function Projects({ projects }: { projects: Project[] }) {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
 
