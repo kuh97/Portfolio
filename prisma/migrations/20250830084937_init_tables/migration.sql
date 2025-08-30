@@ -44,12 +44,28 @@ CREATE TABLE "public"."TaskItem" (
 
 -- CreateTable
 CREATE TABLE "public"."Skill" (
-    "id" SERIAL NOT NULL,
+    "id" INTEGER NOT NULL,
     "name" TEXT NOT NULL,
     "category" "public"."SkillCategory" NOT NULL,
     "iconUrl" TEXT NOT NULL,
 
     CONSTRAINT "Skill_pkey" PRIMARY KEY ("id")
+);
+
+-- CreateTable
+CREATE TABLE "public"."User" (
+    "id" TEXT NOT NULL,
+    "name" TEXT NOT NULL,
+    "email" TEXT,
+    "phone" TEXT,
+    "linkedin" TEXT,
+    "blog" TEXT,
+    "github" TEXT,
+    "profileImageUrl" TEXT,
+    "resumeUrl" TEXT,
+    "workExperienceUrl" TEXT,
+
+    CONSTRAINT "User_pkey" PRIMARY KEY ("id")
 );
 
 -- CreateIndex

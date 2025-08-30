@@ -1,7 +1,8 @@
 "use client";
 
-import { skills } from "@/data/skills";
-import { useState } from "react";
+import { SkillsData } from "@/types";
+import Image from "next/image";
+import { useMemo, useState } from "react";
 import { AnimatedSection } from "../common/AnimatedSection";
 
 const CATEGORIES = {
@@ -14,12 +15,12 @@ const CATEGORIES = {
 
 type SkillCategory = (typeof CATEGORIES)[keyof typeof CATEGORIES];
 
-export function Skills() {
+export function Skills({ skills }: { skills: SkillsData }) {
   const [activeCategory, setActiveCategory] = useState<SkillCategory>(
     CATEGORIES.All,
   );
 
-  const displayedSkills = Object.values(skills).flat();
+  const displayedSkills = useMemo(() => Object.values(skills).flat(), [skills]);
 
   return (
     <section
@@ -39,7 +40,7 @@ export function Skills() {
                 className={`px-6 py-3 rounded-full font-medium transition-all duration-300 ${
                   activeCategory === category
                     ? "bg-emerald-500/70 text-white shadow-lg"
-                    : "bg-white dark:bg-gray-700 text-gray-700 dark:text-gray-200 hover:bg-gray-200 dark:hover:bg-gray-600"
+                    : "bg-white dark:bg-gray-700 text-gray-600 dark:text-gray-200 hover:bg-gray-200 dark:hover:bg-gray-600"
                 }`}
                 onClick={() => setActiveCategory(category as SkillCategory)}
               >
@@ -64,7 +65,15 @@ export function Skills() {
               }`}
               delay={index * 0.02}
             >
-              <div className={`text-4xl`}>{skill.icon || ""}</div>
+              <div className={`text-4xl`}>
+                <Image
+                  alt={skill.name}
+                  height={36}
+                  src={skill.icon}
+                  style={{ width: "36px", height: "36px" }}
+                  width={36}
+                />
+              </div>
               <p
                 className={`hidden md:block font-semibold text-gray-800 dark:text-gray-200 text-center text-sm`}
               >

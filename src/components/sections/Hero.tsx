@@ -5,11 +5,20 @@ import { motion, AnimatePresence } from "framer-motion";
 import { HiArrowDown, HiMail, HiCheck } from "react-icons/hi";
 import { BsGithub, BsLinkedin } from "react-icons/bs";
 import { SiTistory } from "react-icons/si";
-import { CONTACT_INFO } from "@/types";
 
 const TYPING_TEXTS = ["Frontend Developer", "Web Developer"];
 
-export function Hero() {
+interface HeroProps {
+  aboutData?: {
+    name: string;
+    email?: string | null;
+    github?: string | null;
+    linkedin?: string | null;
+    blog?: string | null;
+  };
+}
+
+export function Hero({ aboutData }: HeroProps) {
   const [currentText, setCurrentText] = useState("");
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isTyping, setIsTyping] = useState(true);
@@ -41,7 +50,9 @@ export function Hero() {
     }
   }, [currentText, currentIndex, isTyping]);
 
-  useEffect(() => {}, [currentText, currentIndex, isTyping]);
+  if (!aboutData) {
+    return null;
+  }
 
   const scrollToNext = () => {
     const aboutSection = document.getElementById("about");
@@ -52,7 +63,7 @@ export function Hero() {
     if (isEmailCopied) return;
 
     navigator.clipboard
-      .writeText(CONTACT_INFO.email.replace("mailto:", ""))
+      .writeText(aboutData.email!)
       .then(() => {
         setIsEmailCopied(true);
         setTimeout(() => setIsEmailCopied(false), 2000);
@@ -79,7 +90,7 @@ export function Hero() {
             <span
               className={`text-emerald-400/70 drop-shadow-[0_0_8px_rgba(16,185,129,1)] dark:drop-shadow-[0_0_10px_rgba(16,255,200,0.8)]`}
             >
-              김의현
+              {aboutData.name}
             </span>
             입니다.
           </motion.h1>
@@ -113,59 +124,67 @@ export function Hero() {
             initial={{ opacity: 0, y: 20 }}
             transition={{ delay: 0.7, duration: 0.5 }}
           >
-            <a
-              className={`contact-icon`}
-              href={CONTACT_INFO.github}
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              <BsGithub className={`w-6 h-6`} />
-            </a>
-
-            <a
-              className={`contact-icon`}
-              href={CONTACT_INFO.linkedin}
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              <BsLinkedin className={`w-6 h-6`} />
-            </a>
-
-            <a
-              className={`contact-icon`}
-              href={CONTACT_INFO.blog}
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              <SiTistory className={`w-6 h-6`} />
-            </a>
-
-            <div className={`relative`}>
-              <button
-                aria-label="이메일 복사하기"
+            {aboutData.github && (
+              <a
                 className={`contact-icon`}
-                onClick={handleEmailClick}
+                href={aboutData.github}
+                rel="noopener noreferrer"
+                target="_blank"
               >
-                {isEmailCopied ? (
-                  <HiCheck className={`w-6 h-6 text-emerald-400/70`} />
-                ) : (
-                  <HiMail className={`w-6 h-6`} />
-                )}
-              </button>
-              <AnimatePresence>
-                {isEmailCopied && (
-                  <motion.div
-                    animate={{ opacity: 1, y: 0 }}
-                    className={`absolute top-16 left-1/2 -translate-x-1/2 px-3 py-1.5 text-sm bg-gray-900 text-white dark:bg-white dark:text-gray-900 rounded-lg shadow-lg whitespace-nowrap`}
-                    exit={{ opacity: 0, y: 10 }}
-                    initial={{ opacity: 0, y: 10 }}
-                    transition={{ duration: 0.2 }}
-                  >
-                    복사되었습니다!
-                  </motion.div>
-                )}
-              </AnimatePresence>
-            </div>
+                <BsGithub className={`w-6 h-6`} />
+              </a>
+            )}
+
+            {aboutData.linkedin && (
+              <a
+                className={`contact-icon`}
+                href={aboutData.linkedin}
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                <BsLinkedin className={`w-6 h-6`} />
+              </a>
+            )}
+
+            {aboutData.blog && (
+              <a
+                className={`contact-icon`}
+                href={aboutData.blog}
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                <SiTistory className={`w-6 h-6`} />
+              </a>
+            )}
+
+            {aboutData.email && (
+              <div className={`relative`}>
+                <button
+                  aria-label="이메일 복사하기"
+                  className={`contact-icon`}
+                  onClick={handleEmailClick}
+                >
+                  {isEmailCopied ? (
+                    <HiCheck className={`w-6 h-6 text-emerald-400/70`} />
+                  ) : (
+                    <HiMail className={`w-6 h-6`} />
+                  )}
+                </button>
+                <AnimatePresence>
+                  {isEmailCopied && (
+                    <motion.div
+                      animate={{ opacity: 1, y: 0 }}
+                      className={`absolute top-16 left-1/2 -translate-x-1/2 px-3 py-1.5 text-sm bg-gray-900 text-white dark:bg-white dark:text-gray-900 rounded-lg shadow-lg whitespace-nowrap`}
+                      exit={{ opacity: 0, y: 10 }}
+                      initial={{ opacity: 0, y: 10 }}
+                      transition={{ duration: 0.2 }}
+                    >
+                      복사되었습니다!
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </div>
+            )}
           </motion.div>
         </div>
       </div>
