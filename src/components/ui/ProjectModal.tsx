@@ -1,5 +1,3 @@
-"use client";
-
 import { useEffect } from "react";
 import { Project } from "@/types";
 import { IoMdClose } from "react-icons/io";
