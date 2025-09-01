@@ -1,5 +1,3 @@
-"use client";
-
 import { Project } from "@/types";
 import Image from "next/image";
 import { HiOutlineArrowRight } from "react-icons/hi";
