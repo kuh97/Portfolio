@@ -28,7 +28,7 @@ export function SkillList({ skills }: SkillListProps) {
 
   return (
     <>
-      <AnimatedSection animation="slide-up">
+      <AnimatedSection className={`animate-slide-up`}>
         <div className={`flex flex-wrap justify-center gap-2 mb-8`}>
           {Object.values(CATEGORIES).map((category) => (
             <button
@@ -52,8 +52,7 @@ export function SkillList({ skills }: SkillListProps) {
         {displayedSkills.map((skill, index) => (
           <AnimatedSection
             key={skill.name}
-            animation="slide-up"
-            className={`relative flex flex-col items-center justify-center gap-2 p-4 bg-white dark:bg-gray-900/50 rounded-lg shadow-md transition-all duration-300 ${
+            className={`animate-slide-up relative flex flex-col items-center justify-center gap-2 p-4 bg-white dark:bg-gray-900/50 rounded-lg shadow-md transition-all duration-300 ${
               skills[activeCategory]?.includes(skill) ||
               activeCategory === "All"
                 ? "group hover:scale-105"

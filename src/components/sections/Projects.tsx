@@ -21,7 +21,7 @@ export async function Projects() {
       id="projects"
     >
       <div className={`section-container`}>
-        <AnimatedSection animation="fade" className={`text-center mb-16`}>
+        <AnimatedSection className={`animate-fade text-center mb-16`}>
           <h2 className={`section-header text-3xl md:text-4xl `}>Projects</h2>
         </AnimatedSection>
 

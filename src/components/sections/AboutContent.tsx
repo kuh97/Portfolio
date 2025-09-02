@@ -1,9 +1,6 @@
-"use client";
-
 import Image from "next/image";
 import { BsDownload } from "react-icons/bs";
 import { AnimatedSection } from "../common/AnimatedSection";
-import { useMediaQuery } from "@/hooks/useMediaQuery";
 import { SlEmotsmile } from "react-icons/sl";
 
 const keywords = ["사용자 경험(UX)", "협업 & 소통", "도전", "긍정적 사고"];
@@ -17,8 +14,6 @@ interface AboutContentProps {
 }
 
 export function AboutContent({ aboutData }: AboutContentProps) {
-  const isLarge = useMediaQuery("(min-width: 1024px)");
-
   if (!aboutData) {
     return null;
   }
@@ -26,13 +21,14 @@ export function AboutContent({ aboutData }: AboutContentProps) {
   return (
     <div className={`grid lg:grid-cols-2 gap-12 items-center`}>
       {aboutData.profileImageUrl && (
-        <AnimatedSection animation={isLarge ? "slide-left" : "slide-up"}>
+        <AnimatedSection className={`animate-slide-up lg:animate-slide-left`}>
           <div
             className={`relative mx-auto w-fit bg-emerald-300/40 dark:bg-emerald-200/60 p-4 rounded-2xl shadow-lg`}
           >
             <div className={`relative w-64 h-80 lg:w-72 lg:h-96`}>
               <Image
                 fill
+                priority
                 alt="김의현 프로필 사진"
                 className={`rounded-xl object-cover`}
                 sizes="(max-width: 1024px) 256px, 288px"
@@ -44,8 +40,7 @@ export function AboutContent({ aboutData }: AboutContentProps) {
       )}
 
       <AnimatedSection
-        animation={isLarge ? "slide-right" : "slide-up"}
-        className={`space-y-6 text-center lg:text-left`}
+        className={`animate-slide-up lg:animate-slide-right space-y-6 text-center lg:text-left`}
       >
         <h3
           className={`flex justify-center lg:justify-start items-center text-2xl font-semibold text-gray-900 dark:text-white mb-4`}
@@ -64,7 +59,11 @@ export function AboutContent({ aboutData }: AboutContentProps) {
 
         <div className={`flex flex-wrap justify-center lg:justify-start gap-2`}>
           {keywords.map((keyword, index) => (
-            <AnimatedSection key={index} animation="scale" delay={index * 0.1}>
+            <AnimatedSection
+              key={index}
+              className={`animate-scale`}
+              delay={index * 0.1}
+            >
               <span
                 className={`px-3 py-1 bg-emerald-300/30 text-black dark:text-white rounded-full text-sm font-medium`}
               >
@@ -75,8 +74,7 @@ export function AboutContent({ aboutData }: AboutContentProps) {
         </div>
 
         <AnimatedSection
-          animation="fade"
-          className={`pt-4 flex flex-wrap gap-4 justify-center lg:justify-start`}
+          className={`animate-fade pt-4 flex flex-wrap gap-4 justify-center lg:justify-start`}
           delay={0.3}
         >
           <a

@@ -30,7 +30,7 @@ export function ProjectList({ projects }: ProjectListProps) {
         {projects.map((project) => (
           <AnimatedSection
             key={project.id}
-            animation="slide-up"
+            className={`animate-slide-up`}
             delay={parseFloat(project.id) * 0.1}
           >
             <ProjectCard
