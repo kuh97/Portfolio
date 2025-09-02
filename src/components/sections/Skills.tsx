@@ -38,7 +38,7 @@ export async function Skills() {
       id="skills"
     >
       <div className={`section-container`}>
-        <AnimatedSection animation="fade" className={`text-center mb-16`}>
+        <AnimatedSection className={`animate-fade text-center mb-16`}>
           <h2 className={`section-header text-3xl md:text-4xl `}>Skills</h2>
         </AnimatedSection>
         <SkillList skills={skills} />
