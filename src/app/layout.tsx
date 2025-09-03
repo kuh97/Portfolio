@@ -26,8 +26,10 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
+  modal,
 }: {
   children: React.ReactNode;
+  modal: React.ReactNode;
 }) {
   return (
     <html suppressHydrationWarning lang="ko">
@@ -41,6 +43,7 @@ export default function RootLayout({
           <div className={`min-h-screen`}>
             <Header />
             <main>{children}</main>
+            {modal}
             <ScrollToTop />
             <Footer />
           </div>

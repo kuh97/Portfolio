@@ -18,6 +18,7 @@ export interface ProjectInfo {
 export interface Project {
   id: string;
   title: string;
+  slug: string;
   info: ProjectInfo | null;
   summary: string;
   descriptions: string[];
