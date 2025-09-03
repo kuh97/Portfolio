@@ -14,6 +14,7 @@ CREATE TABLE "public"."Project" (
     "image" TEXT,
     "githubUrl" TEXT,
     "liveUrl" TEXT,
+    "slug" TEXT NOT NULL,
 
     CONSTRAINT "Project_pkey" PRIMARY KEY ("id")
 );
@@ -67,6 +68,9 @@ CREATE TABLE "public"."User" (
 
     CONSTRAINT "User_pkey" PRIMARY KEY ("id")
 );
+
+-- CreateIndex
+CREATE UNIQUE INDEX "Project_slug_key" ON "public"."Project"("slug");
 
 -- CreateIndex
 CREATE UNIQUE INDEX "ProjectInfo_projectId_key" ON "public"."ProjectInfo"("projectId");
