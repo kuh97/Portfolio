@@ -7,11 +7,7 @@ interface UseInViewOptions {
 }
 
 export function useInView(options: UseInViewOptions = {}) {
-  const {
-    threshold = 0.1,
-    triggerOnce = false,
-    rootMargin = "0px 0px -100px 0px",
-  } = options;
+  const { threshold = 0.01, triggerOnce = false, rootMargin = "0px" } = options;
 
   const { ref, inView } = useInViewObserver({
     threshold,
