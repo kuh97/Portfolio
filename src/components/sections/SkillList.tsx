@@ -2,7 +2,7 @@
 
 import { SkillsData } from "@/types";
 import Image from "next/image";
-import { useMemo, useState } from "react";
+import { useState } from "react";
 import { AnimatedSection } from "../common/AnimatedSection";
 
 const CATEGORIES = {
@@ -23,8 +23,6 @@ export function SkillList({ skills }: SkillListProps) {
   const [activeCategory, setActiveCategory] = useState<SkillCategory>(
     CATEGORIES.All,
   );
-
-  const displayedSkills = useMemo(() => Object.values(skills).flat(), [skills]);
 
   return (
     <>
@@ -49,12 +47,11 @@ export function SkillList({ skills }: SkillListProps) {
       <div
         className={`grid grid-cols-5 sm:grid-cols-5 md:grid-cols-6 lg:grid-cols-7 xl:grid-cols-8 gap-4`}
       >
-        {displayedSkills.map((skill, index) => (
+        {skills.All.map((skill, index) => (
           <AnimatedSection
             key={skill.name}
             className={`animate-slide-up relative flex flex-col items-center justify-center gap-2 p-4 bg-white dark:bg-gray-900/50 rounded-lg shadow-md transition-all duration-300 ${
-              skills[activeCategory]?.includes(skill) ||
-              activeCategory === "All"
+              activeCategory === "All" || activeCategory === skill.category
                 ? "group hover:scale-105"
                 : "blur-md opacity-15 pointer-events-none"
             }`}

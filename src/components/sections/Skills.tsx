@@ -7,25 +7,28 @@ async function getSkills() {
   const skills = await prisma.skill.findMany({
     orderBy: [
       {
-        id: "asc",
+        category: "asc",
       },
       {
-        category: "asc",
+        id: "asc",
       },
     ],
   });
 
-  const skillsData = skills.reduce<Record<string, Skill[]>>((acc, skill) => {
-    const { category } = skill;
-    if (!acc[category]) {
-      acc[category] = [];
-    }
-    acc[category].push({
-      ...skill,
-      icon: skill.iconUrl,
-    });
-    return acc;
-  }, {}) as unknown as SkillsData;
+  const allSkills: Skill[] = skills.map((skill) => ({
+    id: skill.id,
+    name: skill.name,
+    icon: skill.iconUrl,
+    category: skill.category,
+  }));
+
+  const skillsData: SkillsData = {
+    All: allSkills,
+    Frontend: allSkills.filter((skill) => skill.category === "Frontend"),
+    Backend: allSkills.filter((skill) => skill.category === "Backend"),
+    Database: allSkills.filter((skill) => skill.category === "Database"),
+    Others: allSkills.filter((skill) => skill.category === "Others"),
+  };
 
   return skillsData;
 }
