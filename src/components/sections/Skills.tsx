@@ -35,6 +35,7 @@ async function getSkills() {
 
 export async function Skills() {
   const skills = await getSkills();
+
   return (
     <section
       className={`section-padding bg-stone-100 dark:bg-gray-800`}
