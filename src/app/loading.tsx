@@ -12,7 +12,7 @@ export default function Loading() {
 
         <div className="space-y-3">
           <h2 className="text-2xl font-bold text-gray-900 dark:text-white">
-            잠시만 기다려주세요.
+            잠시만 기다려주세요
           </h2>
           <p className="text-gray-600 dark:text-gray-300 animate-pulse">
             포트폴리오를 준비하고 있습니다...
