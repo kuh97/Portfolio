@@ -33,7 +33,7 @@ export function Hero({ aboutData }: HeroProps) {
       <div className="section-container relative z-10">
         <div className="text-center max-w-4xl mx-auto">
           <AnimatedTitle
-            className="text-4xl md:text-6xl lg:text-7xl font-bold text-gray-900 dark:text-white mb-6"
+            className="font-bold text-gray-900 dark:text-white mb-6"
             delay={0.3}
           >
             안녕하세요,{" "}
@@ -48,7 +48,7 @@ export function Hero({ aboutData }: HeroProps) {
           </AnimatedSubtitle>
 
           <AnimatedParagraph
-            className="text-lg text-gray-600 dark:text-gray-300 mb-12 max-w-2xl mx-auto leading-relaxed"
+            className="text-gray-600 dark:text-gray-300 mb-12 max-w-2xl mx-auto leading-relaxed"
             delay={0.5}
           >
             단순함 속에서 편리함을, 편리함 속에서 즐거움을

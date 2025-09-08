@@ -21,9 +21,9 @@ export function CollapsibleSection({ task }: CollapsibleSectionProps) {
         className={`w-full px-4 py-4 bg-stone-200 dark:bg-gray-700 hover:bg-stone-300 dark:hover:bg-gray-800 transition-colors flex items-center justify-between text-left`}
         onClick={() => setIsOpen(!isOpen)}
       >
-        <h3 className={`font-semibold text-gray-900 dark:text-white`}>
+        <h4 className={`font-medium text-gray-900 dark:text-white`}>
           {task.title}
-        </h3>
+        </h4>
         <motion.div
           animate={{ rotate: isOpen ? 180 : 0 }}
           transition={{ duration: 0.2 }}
@@ -49,11 +49,11 @@ export function CollapsibleSection({ task }: CollapsibleSectionProps) {
                   className={`w-1 h-auto bg-blue-500 rounded-full my-1`}
                 ></div>
                 <div className={`flex-1`}>
-                  <h4
-                    className={`flex items-center text-lg font-semibold text-gray-800 dark:text-gray-200`}
+                  <h5
+                    className={`flex items-center font-semibold text-gray-800 dark:text-gray-200`}
                   >
                     이슈
-                  </h4>
+                  </h5>
                   <div
                     className={`flex items-start mt-2 text-gray-700 dark:text-gray-300`}
                   >
@@ -74,11 +74,11 @@ export function CollapsibleSection({ task }: CollapsibleSectionProps) {
                   className={`w-1 h-auto bg-green-500 rounded-full my-1`}
                 ></div>
                 <div className={`flex-1`}>
-                  <h4
-                    className={`flex items-center text-lg font-semibold text-gray-800 dark:text-gray-200`}
+                  <h5
+                    className={`flex items-center font-semibold text-gray-800 dark:text-gray-200`}
                   >
                     해결
-                  </h4>
+                  </h5>
                   <ul
                     className={`list-disc list-inside mt-2 space-y-1 text-gray-700 dark:text-gray-300`}
                   >
@@ -103,11 +103,11 @@ export function CollapsibleSection({ task }: CollapsibleSectionProps) {
                   className={`w-1 h-auto bg-purple-500 rounded-full my-1`}
                 ></div>
                 <div className={`flex-1`}>
-                  <h4
-                    className={`flex items-center text-lg font-semibold text-gray-800 dark:text-gray-200`}
+                  <h5
+                    className={`flex items-center font-semibold text-gray-800 dark:text-gray-200`}
                   >
                     성과
-                  </h4>
+                  </h5>
                   <ul
                     className={`list-disc list-inside mt-2 space-y-1 text-gray-700 dark:text-gray-300`}
                   >

@@ -36,11 +36,11 @@ export function HeroTyping() {
   }, [currentText, currentIndex, isTyping]);
 
   return (
-    <h2
-      className={`text-3xl md:text-3xl font-semibold text-gray-700 dark:text-gray-200 min-h-[3rem]`}
+    <p
+      className={`font-semibold text-gray-700 dark:text-gray-200 min-h-[3rem]`}
     >
       {currentText}
       <span className={`animate-pulse`}>|</span>
-    </h2>
+    </p>
   );
 }

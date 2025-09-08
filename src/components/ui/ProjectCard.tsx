@@ -1,5 +1,4 @@
 import { Project } from "@/types";
-import Image from "next/image";
 import Link from "next/link";
 import { HiOutlineArrowRight } from "react-icons/hi";
 
@@ -10,68 +9,67 @@ interface ProjectCardProps {
 export function ProjectCard({ project }: ProjectCardProps) {
   return (
     <section
-      className={`overflow-hidden flex flex-col justify-start gap-8 rounded-2xl bg-stone-100 dark:bg-gray-800
-         relative h-[23rem] group transition-transform duration-300 ease-out hover:shadow-xl
-         hover:-translate-y-2`}
+      className={`project-card overflow-hidden flex flex-col justify-start gap-8 rounded-2xl bg-stone-100 dark:bg-gray-800
+         relative h-[20rem] group transition-transform duration-300 ease-out`}
       id="ProjectCard"
     >
-      {project.image && (
-        <div className={`relative h-48 overflow-hidden`}>
-          <Image
-            alt={project.title}
-            className={`transition-opacity group-hover:opacity-50`}
-            layout="fill"
-            loading="lazy"
-            objectFit="cover"
-            src={project.image as string}
-          />
-        </div>
-      )}
-
       <div className={`p-6 flex-grow flex flex-col`}>
-        <div className={`flex items-center mb-3`}>
-          <div
-            className={`px-2 py-1 bg-emerald-300/50 dark:bg-emerald-400/40 text-gray-600 dark:text-gray-200 rounded-full text-sm font-semibold mr-2`}
+        <div className={`text-sm flex items-center mb-3`}>
+          <span
+            className={`px-2 py-1 bg-emerald-300/50 dark:bg-emerald-400/40 text-gray-800 dark:text-gray-200 rounded-full font-medium mr-2`}
           >
             {project.info?.name}
-          </div>
-          <span className={`text-gray-600 dark:text-gray-400 text-sm`}>
+          </span>
+          <span className={`text-gray-600 dark:text-gray-400`}>
             {project.info?.period}
           </span>
         </div>
 
-        <h2
-          className={`text-[clamp(1.25rem,1.8vw,1.3rem)] font-semibold dark:text-white mb-1 pb-2`}
-        >
+        <h3 className={`font-semibold dark:text-white mb-1 pb-2`}>
           {project.title}
-        </h2>
-        <div
-          className={`flex items-start text-gray-700 dark:text-gray-300 text-sm mb-2`}
-        >
+        </h3>
+        <p className={`flex items-start text-gray-800 dark:text-gray-300 mb-4`}>
           <HiOutlineArrowRight
             className={`w-4 h-4 mt-1.5 mr-2 text-green-500 flex-shrink-0`}
           />
           {project.summary}
-        </div>
-      </div>
+        </p>
 
-      <div
-        className={`absolute z-[3] flex flex-col items-center justify-center gap-10 text-black dark:text-white w-full
-           h-full p-5 hover:bg-stone-100 dark:hover:bg-gray-800 opacity-0 transition group-hover:opacity-100`}
-      >
-        <h3 className={`font-bold text-2xl group-hover:text-center`}>
-          {project.title}
-        </h3>
-        <div className={`w-2/3 flex flex-col gap-3`}>
+        <div className={`mobile-buttons mt-auto flex-col gap-2`}>
           <Link
-            className={`primary-button px-6 py-3 rounded-lg text-center`}
+            className={`primary-button px-4 py-2 rounded-lg text-center block`}
             href={`/${project.slug}`}
           >
             자세히보기
           </Link>
           {project.githubUrl && (
             <a
-              className={`primary-button px-6 py-3 rounded-lg`}
+              className={`primary-button px-4 py-2 rounded-lg block mt-2`}
+              href={project.githubUrl}
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              Github 바로가기
+            </a>
+          )}
+        </div>
+      </div>
+
+      <div
+        className={`hover-overlay absolute z-[3] flex flex-col items-center justify-center gap-10 text-black dark:text-white w-full
+           h-full p-5 bg-stone-100 dark:bg-gray-800 opacity-0 transition-opacity duration-300`}
+      >
+        <h3 className={`font-semibold text-center`}>{project.title}</h3>
+        <div className={`w-2/3 flex flex-col gap-3`}>
+          <Link
+            className={`primary-button px-[clamp(1rem,4vw,1.5rem)] py-[clamp(0.5rem,2vw,0.75rem)] rounded-lg text-center`}
+            href={`/${project.slug}`}
+          >
+            자세히보기
+          </Link>
+          {project.githubUrl && (
+            <a
+              className={`primary-button px-[clamp(1rem,4vw,1.5rem)] py-[clamp(0.5rem,2vw,0.75rem)] rounded-lg`}
               href={project.githubUrl}
               rel="noopener noreferrer"
               target="_blank"

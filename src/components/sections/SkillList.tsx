@@ -2,7 +2,7 @@
 
 import { SkillsData } from "@/types";
 import Image from "next/image";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { AnimatedSection } from "../common/AnimatedSection";
 
 const CATEGORIES = {
@@ -23,6 +23,23 @@ export function SkillList({ skills }: SkillListProps) {
   const [activeCategory, setActiveCategory] = useState<SkillCategory>(
     CATEGORIES.All,
   );
+  const [clickedSkill, setClickedSkill] = useState<string | null>(null);
+
+  const handleSkillClick = (skillName: string) => {
+    setClickedSkill((prev) => (prev === skillName ? null : skillName));
+  };
+
+  useEffect(() => {
+    const handleClickOutside = (event: Event) => {
+      const target = event.target as Element;
+      if (clickedSkill && !target.closest(".skill-item")) {
+        setClickedSkill(null);
+      }
+    };
+
+    document.addEventListener("click", handleClickOutside);
+    return () => document.removeEventListener("click", handleClickOutside);
+  }, [clickedSkill]);
 
   return (
     <>
@@ -31,7 +48,7 @@ export function SkillList({ skills }: SkillListProps) {
           {Object.values(CATEGORIES).map((category) => (
             <button
               key={category}
-              className={`px-6 py-3 rounded-full font-medium transition-all duration-300 ${
+              className={`primary-button px-[clamp(1rem,4vw,1.5rem)] py-[clamp(0.5rem,2vw,0.75rem)] rounded-full font-medium transition-all duration-300 ${
                 activeCategory === category
                   ? "bg-emerald-500/70 text-white shadow-lg"
                   : "bg-white dark:bg-gray-700 text-gray-600 dark:text-gray-200 hover:bg-gray-200 dark:hover:bg-gray-600"
@@ -50,32 +67,30 @@ export function SkillList({ skills }: SkillListProps) {
         {skills.All.map((skill, index) => (
           <AnimatedSection
             key={skill.name}
-            className={`animate-slide-up relative flex flex-col items-center justify-center gap-2 p-4 bg-white dark:bg-gray-900/50 rounded-lg shadow-md transition-all duration-300 ${
+            className={`animate-slide-up skill-item relative flex flex-col items-center justify-center gap-2 p-4 bg-white dark:bg-gray-900/50 rounded-lg shadow-md transition-all duration-300 cursor-pointer ${
               activeCategory === "All" || activeCategory === skill.category
                 ? "group hover:scale-105"
                 : "blur-md opacity-15 pointer-events-none"
-            }`}
+            } ${clickedSkill === skill.name ? "clicked" : ""}`}
             delay={index * 0.02}
           >
-            <div className={`text-4xl`}>
+            <div onClick={() => handleSkillClick(skill.name)}>
               <Image
                 alt={skill.name}
+                className={`w-[clamp(1.5rem,4vw,2.25rem)] h-[clamp(1.5rem,4vw,2.25rem)]`}
                 height={36}
                 src={skill.icon}
-                style={{ width: "36px", height: "36px" }}
                 width={36}
               />
             </div>
+
             <p
-              className={`hidden md:block font-semibold text-gray-800 dark:text-gray-200 text-center text-sm`}
+              className={`skill-text font-medium dark:font-light text-black dark:text-gray-200 text-center`}
             >
               {skill.name}
             </p>
-            <div
-              className={`md:hidden absolute bottom-full mb-2 px-3 py-1.5 bg-gray-900 text-white dark:bg-white dark:text-gray-900 rounded-lg shadow-lg text-sm opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none`}
-            >
-              {skill.name}
-            </div>
+
+            <div className={`skill-tooltip`}>{skill.name}</div>
           </AnimatedSection>
         ))}
       </div>

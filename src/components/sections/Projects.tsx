@@ -8,6 +8,9 @@ async function getProjects() {
       info: true,
       tasks: true,
     },
+    orderBy: {
+      id: "asc",
+    },
   });
   return projects;
 }
@@ -21,8 +24,8 @@ export async function Projects() {
       id="projects"
     >
       <div className={`section-container`}>
-        <AnimatedSection className={`animate-fade text-center mb-16`}>
-          <h2 className={`section-header text-3xl md:text-4xl `}>Projects</h2>
+        <AnimatedSection className={`animate-fade text-center`}>
+          <h2 className={`section-header`}>Projects</h2>
         </AnimatedSection>
 
         <ProjectList projects={projects} />
