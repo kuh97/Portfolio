@@ -22,15 +22,13 @@ export function AboutContent({ aboutData }: AboutContentProps) {
     <div className={`grid lg:grid-cols-2 gap-12 items-center`}>
       {aboutData.profileImageUrl && (
         <AnimatedSection className={`animate-slide-up lg:animate-slide-left`}>
-          <div
-            className={`relative mx-auto w-fit bg-emerald-300/40 dark:bg-emerald-200/60 p-4 rounded-2xl shadow-lg`}
-          >
-            <div className={`relative w-64 h-80 lg:w-72 lg:h-96`}>
+          <div className="relative mx-auto w-[clamp(16rem,30vw,18rem)] h-[clamp(20rem,35vw,24rem)] bg-emerald-300/40 dark:bg-emerald-200/60 p-[clamp(0.875rem,2vw,1rem)] rounded-2xl shadow-lg">
+            <div className="relative w-full h-full">
               <Image
                 fill
                 priority
                 alt="김의현 프로필 사진"
-                className={`rounded-xl object-cover`}
+                className="rounded-xl object-cover"
                 sizes="(max-width: 1024px) 256px, 288px"
                 src={aboutData.profileImageUrl}
               />
@@ -43,7 +41,7 @@ export function AboutContent({ aboutData }: AboutContentProps) {
         className={`animate-slide-up lg:animate-slide-right space-y-6 text-center lg:text-left`}
       >
         <h3
-          className={`flex justify-center lg:justify-start items-center text-2xl font-semibold text-gray-900 dark:text-white mb-4`}
+          className={`flex justify-center lg:justify-start items-center font-semibold text-gray-900 dark:text-white mb-4`}
         >
           안녕하세요! 프론트엔드 개발자 김의현입니다
           <SlEmotsmile
@@ -65,7 +63,7 @@ export function AboutContent({ aboutData }: AboutContentProps) {
               delay={index * 0.1}
             >
               <span
-                className={`px-3 py-1 bg-emerald-300/30 text-black dark:text-white rounded-full text-sm font-medium`}
+                className={`text-sm px-3 py-1 bg-emerald-300/30 text-black dark:text-white rounded-full font-medium`}
               >
                 {keyword}
               </span>
@@ -78,18 +76,22 @@ export function AboutContent({ aboutData }: AboutContentProps) {
           delay={0.3}
         >
           <a
-            className="primary-button px-6 py-3 rounded-lg"
+            className={`primary-button px-[clamp(1rem,4vw,1.5rem)] py-[clamp(0.5rem,2vw,0.75rem)] rounded-lg`}
             href="/api/download/resume"
           >
-            <BsDownload className="w-6 h-6 mr-3" />
+            <BsDownload
+              className={`w-[clamp(1rem,4vw,1.5rem)] h-[clamp(1rem,4vw,1.5rem)] mr-3`}
+            />
             이력서 다운로드
           </a>
 
           <a
-            className="primary-button px-6 py-3 rounded-lg"
+            className={`primary-button px-[clamp(1rem,4vw,1.5rem)] py-[clamp(0.5rem,2vw,0.75rem)] rounded-lg`}
             href="/api/download/workExperience"
           >
-            <BsDownload className="w-6 h-6 mr-3" />
+            <BsDownload
+              className={`w-[clamp(1rem,4vw,1.5rem)] h-[clamp(1rem,4vw,1.5rem)] mr-3`}
+            />
             경력기술서 다운로드
           </a>
         </AnimatedSection>

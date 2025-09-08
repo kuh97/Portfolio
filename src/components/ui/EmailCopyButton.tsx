@@ -42,7 +42,7 @@ export function EmailCopyButton({ email }: EmailCopyButtonProps) {
         {isEmailCopied && (
           <motion.div
             animate={{ opacity: 1, y: 0 }}
-            className="absolute top-16 left-1/2 -translate-x-1/2 px-3 py-1.5 text-sm bg-gray-900 text-white dark:bg-white dark:text-gray-900 rounded-lg shadow-lg whitespace-nowrap"
+            className="absolute top-16 left-1/2 -translate-x-1/2 px-3 py-1.5 text-sm bg-emerald-400/70 text-white rounded-lg shadow-lg whitespace-nowrap"
             exit={{ opacity: 0, y: 10 }}
             initial={{ opacity: 0, y: 10 }}
             transition={{ duration: 0.2 }}

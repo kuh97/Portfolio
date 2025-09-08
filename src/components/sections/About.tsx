@@ -16,8 +16,8 @@ export function About({ aboutData }: AboutProps) {
       id="about"
     >
       <div className={`section-container`}>
-        <AnimatedSection className={`animate-fade text-center mb-16`}>
-          <h2 className={`section-header text-3xl md:text-4xl`}>About Me</h2>
+        <AnimatedSection className={`animate-fade text-center`}>
+          <h2 className={`section-header`}>About Me</h2>
         </AnimatedSection>
         <AboutContent aboutData={aboutData} />
       </div>
