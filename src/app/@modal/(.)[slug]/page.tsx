@@ -3,14 +3,13 @@ import { getProjectBySlug } from "@/lib/projects";
 import { notFound } from "next/navigation";
 
 interface ModalPageProps {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }
 
 export default async function InterceptedProjectModal({
   params,
 }: ModalPageProps) {
-  const { slug } = await params;
-  const project = await getProjectBySlug(slug);
+  const project = await getProjectBySlug((await params).slug);
 
   if (!project) {
     notFound();
