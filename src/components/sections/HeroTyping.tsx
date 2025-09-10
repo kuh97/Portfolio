@@ -37,7 +37,7 @@ export function HeroTyping() {
 
   return (
     <p
-      className={`font-semibold text-gray-700 dark:text-gray-200 min-h-[3rem]`}
+      className={`font-semibold text-gray-700 dark:text-gray-200 min-h-[3rem] text-[clamp(1.2rem,3vw,1.8rem)]`}
     >
       {currentText}
       <span className={`animate-pulse`}>|</span>

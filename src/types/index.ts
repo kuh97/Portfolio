@@ -61,17 +61,17 @@ export const NAVIGATION_ITEMS = [
 
 export const SITE_CONFIG = {
   name: "포트폴리오",
-  title: "개발자 포트폴리오",
+  title: "김의현 | 포트폴리오",
   description: "next.js로 만든 개발자 포트폴리오입니다.",
-  url: "https://domain.com", // 추후 변경
+  url: "https://uihyeon-portfolio.vercel.app",
   keywords: [
     "개발자",
-    "포트폴리오",
     "프론트엔드",
-    "Frontend",
+    "프론트엔드 개발자",
+    "개발자 포트폴리오",
+    "Frontend Developer",
     "React",
     "Next.js",
     "TypeScript",
-    "Tailwind",
   ],
 };

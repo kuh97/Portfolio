@@ -12,7 +12,7 @@ interface AboutProps {
 export function About({ aboutData }: AboutProps) {
   return (
     <section
-      className={`section-padding bg-stone-200 dark:bg-gray-800/50`}
+      className={`section-padding bg-stone-200 dark:bg-gray-900`}
       id="about"
     >
       <div className={`section-container`}>

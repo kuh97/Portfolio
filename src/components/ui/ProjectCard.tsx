@@ -37,6 +37,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
 
         <div className={`mobile-buttons mt-auto flex-col gap-2`}>
           <Link
+            aria-label={`${project.title} 자세히보기`}
             className={`primary-button px-4 py-2 rounded-lg text-center block`}
             href={`/${project.slug}`}
           >
@@ -44,6 +45,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
           </Link>
           {project.githubUrl && (
             <a
+              aria-label="Github 바로가기"
               className={`primary-button px-4 py-2 rounded-lg block mt-2`}
               href={project.githubUrl}
               rel="noopener noreferrer"
@@ -62,6 +64,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
         <h3 className={`font-semibold text-center`}>{project.title}</h3>
         <div className={`w-2/3 flex flex-col gap-3`}>
           <Link
+            aria-label={`${project.title} 자세히보기`}
             className={`primary-button px-[clamp(1rem,4vw,1.5rem)] py-[clamp(0.5rem,2vw,0.75rem)] rounded-lg text-center`}
             href={`/${project.slug}`}
           >
@@ -69,6 +72,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
           </Link>
           {project.githubUrl && (
             <a
+              aria-label="Github 바로가기"
               className={`primary-button px-[clamp(1rem,4vw,1.5rem)] py-[clamp(0.5rem,2vw,0.75rem)] rounded-lg`}
               href={project.githubUrl}
               rel="noopener noreferrer"
