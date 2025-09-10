@@ -49,11 +49,11 @@
 
   /* UI 컴포넌트 */
   .contact-icon {
-    @apply p-3 bg-white dark:bg-gray-800 rounded-full shadow-lg transition-all duration-300 hover:scale-110 text-gray-700 dark:text-gray-300 hover:text-emerald-300;
+    @apply p-3 bg-white dark:bg-gray-900 rounded-full shadow-lg transition-all duration-300 hover:scale-110 text-gray-700 dark:text-gray-300 hover:text-emerald-300;
   }
 
   .contact-icon:hover {
-    @apply shadow-[0_0_20px_rgba(16,185,129,1)] dark:shadow-[0_0_30px_rgba(16,255,200,0.1)];
+    @apply shadow-[0_0_20px_rgba(16,185,129,1)] dark:shadow-[0_0_30px_rgba(16,255,200,0.3)];
   }
 
   .primary-button {
@@ -279,7 +279,7 @@
 
   .project-card:hover {
     transform: translateY(-0.5rem);
-    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    @apply shadow-[0_0_20px_rgba(16,185,129,1)] dark:shadow-[0_0_30px_rgba(16,255,200,0.3)];
   }
 
   .project-card:hover .hover-overlay {
