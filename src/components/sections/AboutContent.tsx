@@ -40,15 +40,15 @@ export function AboutContent({ aboutData }: AboutContentProps) {
       <AnimatedSection
         className={`animate-slide-up lg:animate-slide-right space-y-6 text-center lg:text-left`}
       >
-        <h3
-          className={`flex justify-center lg:justify-start items-center font-semibold text-gray-900 dark:text-white mb-4`}
-        >
-          안녕하세요! 프론트엔드 개발자 김의현입니다
-          <SlEmotsmile
-            className={`ml-1 w-6 h-6 text-blue-700 dark:text-yellow-300`}
-          />
+        <h3 className="flex flex-wrap justify-center lg:justify-start items-center font-semibold text-gray-900 dark:text-white mb-4">
+          안녕하세요! 프론트엔드 개발자{" "}
+          <span className="ml-1 whitespace-nowrap drop-shadow-[0_0_8px_rgba(16,185,129,1)] dark:drop-shadow-[0_0_6px_rgba(16,255,200,0.5)]">
+            김의현
+          </span>{" "}
+          입니다
+          <SlEmotsmile className="ml-1 w-6 h-6 text-blue-700 dark:text-yellow-300" />
         </h3>
-        <p className={`text-gray-600 dark:text-gray-300 leading-relaxed`}>
+        <p className={`text-gray-800 dark:text-gray-300 leading-relaxed`}>
           사용자 경험과 협업의 가치를 중요하게 생각하는 프론트엔드 개발자
           김의현입니다. 복잡한 기능을 사용자가 쉽게 다가갈 수 있도록 만드는
           과정을 즐기며, 팀원들과 함께 더 나은 코드를 만들기 위해 끊임없이
@@ -63,7 +63,7 @@ export function AboutContent({ aboutData }: AboutContentProps) {
               delay={index * 0.1}
             >
               <span
-                className={`text-sm px-3 py-1 bg-emerald-300/30 text-black dark:text-white rounded-full font-medium`}
+                className={`text-sm px-3 py-1 bg-emerald-300/30 text-gray-700 dark:text-white rounded-full font-medium`}
               >
                 {keyword}
               </span>
@@ -76,6 +76,7 @@ export function AboutContent({ aboutData }: AboutContentProps) {
           delay={0.3}
         >
           <a
+            aria-label="이력서 다운로드"
             className={`primary-button px-[clamp(1rem,4vw,1.5rem)] py-[clamp(0.5rem,2vw,0.75rem)] rounded-lg`}
             href="/api/download/resume"
           >
@@ -86,6 +87,7 @@ export function AboutContent({ aboutData }: AboutContentProps) {
           </a>
 
           <a
+            aria-label="경력기술서 다운로드"
             className={`primary-button px-[clamp(1rem,4vw,1.5rem)] py-[clamp(0.5rem,2vw,0.75rem)] rounded-lg`}
             href="/api/download/workExperience"
           >

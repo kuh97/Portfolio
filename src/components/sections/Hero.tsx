@@ -27,7 +27,7 @@ export function Hero({ aboutData }: HeroProps) {
 
   return (
     <section
-      className="min-h-screen flex items-center justify-center relative bg-stone-100 dark:bg-transparent"
+      className="min-h-screen flex items-center justify-center relative bg-stone-100 dark:bg-gray-800"
       id="hero"
     >
       <div className="section-container relative z-10">
@@ -37,7 +37,7 @@ export function Hero({ aboutData }: HeroProps) {
             delay={0.3}
           >
             안녕하세요,{" "}
-            <span className="text-emerald-400/70 drop-shadow-[0_0_8px_rgba(16,185,129,1)] dark:drop-shadow-[0_0_10px_rgba(16,255,200,0.8)]">
+            <span className="drop-shadow-[0_0_8px_rgba(16,185,129,1)] dark:drop-shadow-[0_0_6px_rgba(16,255,200,0.5)]">
               {aboutData.name}
             </span>
             입니다.
@@ -60,6 +60,7 @@ export function Hero({ aboutData }: HeroProps) {
           >
             {aboutData.github && (
               <a
+                aria-label="GitHub"
                 className="contact-icon"
                 href={aboutData.github}
                 rel="noopener noreferrer"
@@ -71,6 +72,7 @@ export function Hero({ aboutData }: HeroProps) {
 
             {aboutData.linkedin && (
               <a
+                aria-label="LinkedIn"
                 className="contact-icon"
                 href={aboutData.linkedin}
                 rel="noopener noreferrer"
@@ -82,6 +84,7 @@ export function Hero({ aboutData }: HeroProps) {
 
             {aboutData.blog && (
               <a
+                aria-label="Blog"
                 className="contact-icon"
                 href={aboutData.blog}
                 rel="noopener noreferrer"
