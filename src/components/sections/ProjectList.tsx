@@ -13,7 +13,7 @@ export function ProjectList({ projects }: ProjectListProps) {
         <AnimatedSection
           key={project.id}
           className={`animate-slide-up`}
-          delay={parseFloat(project.id) * 0.1}
+          delay={project.id * 0.1}
         >
           <ProjectCard project={project} />
         </AnimatedSection>

@@ -8,36 +8,34 @@ datasource db {
 }
 
 model Project {
-  id           String       @id
+  id           Int      @id @default(autoincrement())
   title        String
   summary      String
   descriptions String[]     @default([])
   technologies String[]     @default([])
-  image        String?
   githubUrl    String?
-  liveUrl      String?
   slug         String       @unique
   info         ProjectInfo?
   tasks        TaskItem[]
 }
 
 model ProjectInfo {
-  id        String      @id @default(uuid())
+  id           Int      @id @default(autoincrement())
   type      ProjectType
   name      String
   period    String
   members   String
-  projectId String      @unique
+  projectId Int      @unique
   project   Project     @relation(fields: [projectId], references: [id])
 }
 
 model TaskItem {
-  id           String   @id
+  id           Int      @id @default(autoincrement())
   title        String
   issue        String
   solutions    String[] @default([])
   achievements String[] @default([])
-  projectId    String
+  projectId    Int
   project      Project  @relation(fields: [projectId], references: [id])
 }
 
@@ -49,7 +47,7 @@ model Skill {
 }
 
 model User {
-  id                String  @id @default(uuid())
+  id           Int      @id @default(autoincrement())
   name              String
   email             String?
   phone             String?

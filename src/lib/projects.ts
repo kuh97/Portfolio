@@ -6,7 +6,11 @@ export async function getProjectBySlug(slug: string) {
       where: { slug },
       include: {
         info: true,
-        tasks: true,
+        tasks: {
+          orderBy: {
+            id: "asc",
+          },
+        },
       },
     });
     return project;

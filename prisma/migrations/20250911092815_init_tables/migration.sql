@@ -6,14 +6,12 @@ CREATE TYPE "public"."SkillCategory" AS ENUM ('Frontend', 'Backend', 'Database',
 
 -- CreateTable
 CREATE TABLE "public"."Project" (
-    "id" TEXT NOT NULL,
+    "id" SERIAL NOT NULL,
     "title" TEXT NOT NULL,
     "summary" TEXT NOT NULL,
     "descriptions" TEXT[] DEFAULT ARRAY[]::TEXT[],
     "technologies" TEXT[] DEFAULT ARRAY[]::TEXT[],
-    "image" TEXT,
     "githubUrl" TEXT,
-    "liveUrl" TEXT,
     "slug" TEXT NOT NULL,
 
     CONSTRAINT "Project_pkey" PRIMARY KEY ("id")
@@ -21,24 +19,24 @@ CREATE TABLE "public"."Project" (
 
 -- CreateTable
 CREATE TABLE "public"."ProjectInfo" (
-    "id" TEXT NOT NULL,
+    "id" SERIAL NOT NULL,
     "type" "public"."ProjectType" NOT NULL,
     "name" TEXT NOT NULL,
     "period" TEXT NOT NULL,
     "members" TEXT NOT NULL,
-    "projectId" TEXT NOT NULL,
+    "projectId" INTEGER NOT NULL,
 
     CONSTRAINT "ProjectInfo_pkey" PRIMARY KEY ("id")
 );
 
 -- CreateTable
 CREATE TABLE "public"."TaskItem" (
-    "id" TEXT NOT NULL,
+    "id" SERIAL NOT NULL,
     "title" TEXT NOT NULL,
     "issue" TEXT NOT NULL,
     "solutions" TEXT[] DEFAULT ARRAY[]::TEXT[],
     "achievements" TEXT[] DEFAULT ARRAY[]::TEXT[],
-    "projectId" TEXT NOT NULL,
+    "projectId" INTEGER NOT NULL,
 
     CONSTRAINT "TaskItem_pkey" PRIMARY KEY ("id")
 );
@@ -55,7 +53,7 @@ CREATE TABLE "public"."Skill" (
 
 -- CreateTable
 CREATE TABLE "public"."User" (
-    "id" TEXT NOT NULL,
+    "id" SERIAL NOT NULL,
     "name" TEXT NOT NULL,
     "email" TEXT,
     "phone" TEXT,

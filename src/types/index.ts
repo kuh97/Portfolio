@@ -1,5 +1,5 @@
 export interface TaskItem {
-  id: string;
+  id: number;
   title: string;
   issue: string;
   solutions: string[];
@@ -16,7 +16,7 @@ export interface ProjectInfo {
 }
 
 export interface Project {
-  id: string;
+  id: number;
   title: string;
   slug: string;
   info: ProjectInfo | null;
@@ -24,9 +24,7 @@ export interface Project {
   descriptions: string[];
   technologies: string[];
   tasks: TaskItem[];
-  image?: string | null;
   githubUrl?: string | null;
-  liveUrl?: string | null;
 }
 
 export interface Skill {
