@@ -51,7 +51,7 @@ export function SkillList({ skills }: SkillListProps) {
               className={`primary-button px-[clamp(1rem,4vw,1.5rem)] py-[clamp(0.5rem,2vw,0.75rem)] rounded-full font-medium transition-all duration-300 ${
                 activeCategory === category
                   ? "bg-emerald-500/70 text-white shadow-lg"
-                  : "bg-white dark:bg-gray-700 text-gray-600 dark:text-gray-200 hover:bg-gray-200 dark:hover:bg-gray-600"
+                  : "bg-white dark:bg-gray-700 text-gray-600 dark:text-gray-200 hover:text-emerald-300"
               }`}
               onClick={() => setActiveCategory(category as SkillCategory)}
             >
