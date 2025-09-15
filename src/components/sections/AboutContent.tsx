@@ -75,27 +75,31 @@ export function AboutContent({ aboutData }: AboutContentProps) {
           className={`animate-fade pt-4 flex flex-wrap gap-4 justify-center lg:justify-start`}
           delay={0.3}
         >
-          <a
-            aria-label="이력서 다운로드"
-            className={`primary-button px-[clamp(1rem,4vw,1.5rem)] py-[clamp(0.5rem,2vw,0.75rem)] rounded-lg`}
-            href="/api/download/resume"
-          >
-            <BsDownload
-              className={`w-[clamp(1rem,4vw,1.5rem)] h-[clamp(1rem,4vw,1.5rem)] mr-3`}
-            />
-            이력서 다운로드
-          </a>
+          {aboutData.resumeUrl && (
+            <a
+              aria-label="이력서 다운로드"
+              className={`primary-button px-[clamp(1rem,4vw,1.5rem)] py-[clamp(0.5rem,2vw,0.75rem)] rounded-lg`}
+              href="/api/download/resume"
+            >
+              <BsDownload
+                className={`w-[clamp(1rem,4vw,1.5rem)] h-[clamp(1rem,4vw,1.5rem)] mr-3`}
+              />
+              이력서 다운로드
+            </a>
+          )}
 
-          <a
-            aria-label="경력기술서 다운로드"
-            className={`primary-button px-[clamp(1rem,4vw,1.5rem)] py-[clamp(0.5rem,2vw,0.75rem)] rounded-lg`}
-            href="/api/download/workExperience"
-          >
-            <BsDownload
-              className={`w-[clamp(1rem,4vw,1.5rem)] h-[clamp(1rem,4vw,1.5rem)] mr-3`}
-            />
-            경력기술서 다운로드
-          </a>
+          {aboutData.workExperienceUrl && (
+            <a
+              aria-label="경력기술서 다운로드"
+              className={`primary-button px-[clamp(1rem,4vw,1.5rem)] py-[clamp(0.5rem,2vw,0.75rem)] rounded-lg`}
+              href="/api/download/workExperience"
+            >
+              <BsDownload
+                className={`w-[clamp(1rem,4vw,1.5rem)] h-[clamp(1rem,4vw,1.5rem)] mr-3`}
+              />
+              경력기술서 다운로드
+            </a>
+          )}
         </AnimatedSection>
       </AnimatedSection>
     </div>
