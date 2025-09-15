@@ -1,7 +1,7 @@
 export interface TaskItem {
   id: number;
   title: string;
-  issue: string;
+  issues: string[];
   solutions: string[];
   achievements: string[];
 }

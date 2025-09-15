@@ -32,7 +32,7 @@ model ProjectInfo {
 model TaskItem {
   id           Int      @id @default(autoincrement())
   title        String
-  issue        String
+  issues       String[] @default([])
   solutions    String[] @default([])
   achievements String[] @default([])
   projectId    Int

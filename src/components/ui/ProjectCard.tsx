@@ -46,7 +46,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
           {project.githubUrl && (
             <a
               aria-label="Github 바로가기"
-              className={`primary-button px-4 py-2 rounded-lg block mt-2`}
+              className={`primary-button px-4 py-2 rounded-lg text-center block mt-2`}
               href={project.githubUrl}
               rel="noopener noreferrer"
               target="_blank"
@@ -73,7 +73,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
           {project.githubUrl && (
             <a
               aria-label="Github 바로가기"
-              className={`primary-button px-[clamp(1rem,4vw,1.5rem)] py-[clamp(0.5rem,2vw,0.75rem)] rounded-lg`}
+              className={`primary-button px-[clamp(1rem,4vw,1.5rem)] py-[clamp(0.5rem,2vw,0.75rem)] rounded-lg text-center`}
               href={project.githubUrl}
               rel="noopener noreferrer"
               target="_blank"
