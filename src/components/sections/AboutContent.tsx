@@ -26,7 +26,6 @@ export function AboutContent({ aboutData }: AboutContentProps) {
             <div className="relative w-full h-full">
               <Image
                 fill
-                priority
                 alt="김의현 프로필 사진"
                 className="rounded-xl object-cover"
                 sizes="(max-width: 1024px) 256px, 288px"

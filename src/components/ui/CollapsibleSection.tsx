@@ -54,18 +54,22 @@ export function CollapsibleSection({ task }: CollapsibleSectionProps) {
                   >
                     이슈
                   </h5>
-                  <div
-                    className={`flex items-start mt-2 text-gray-700 dark:text-gray-300`}
+                  <ul
+                    className={`list-disc list-inside mt-2 space-y-1 text-gray-700 dark:text-gray-300`}
                   >
-                    <HiOutlineArrowRight
-                      className={`w-4 h-4 mt-1.5 mr-2 text-blue-500 flex-shrink-0`}
-                    />
-                    <p
-                      className={`text-gray-700 dark:text-gray-300 leading-relaxed`}
-                    >
-                      {task.issue}
-                    </p>
-                  </div>
+                    {task.issues.map((issue, index) => (
+                      <li key={index} className={`flex items-start`}>
+                        <HiOutlineArrowRight
+                          className={`w-4 h-4 mt-1.5 mr-2 text-green-500 flex-shrink-0`}
+                        />
+                        <p
+                          className={`text-gray-700 dark:text-gray-300 leading-relaxed`}
+                        >
+                          {issue}
+                        </p>
+                      </li>
+                    ))}
+                  </ul>
                 </div>
               </div>
 

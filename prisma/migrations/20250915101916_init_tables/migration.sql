@@ -33,7 +33,7 @@ CREATE TABLE "public"."ProjectInfo" (
 CREATE TABLE "public"."TaskItem" (
     "id" SERIAL NOT NULL,
     "title" TEXT NOT NULL,
-    "issue" TEXT NOT NULL,
+    "issues" TEXT[] DEFAULT ARRAY[]::TEXT[],
     "solutions" TEXT[] DEFAULT ARRAY[]::TEXT[],
     "achievements" TEXT[] DEFAULT ARRAY[]::TEXT[],
     "projectId" INTEGER NOT NULL,
