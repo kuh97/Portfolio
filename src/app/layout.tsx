@@ -23,6 +23,14 @@ export const metadata: Metadata = {
     title: SITE_CONFIG.title,
     description: SITE_CONFIG.description,
     siteName: SITE_CONFIG.name,
+    images: [
+      {
+        url: "/openGraphImage.png",
+        width: 800,
+        height: 600,
+        alt: "미리보기 이미지",
+      },
+    ],
   },
 };
 
