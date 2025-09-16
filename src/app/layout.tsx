@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     siteName: SITE_CONFIG.name,
     images: [
       {
-        url: "/openGraphImage.png",
+        url: `${SITE_CONFIG.url}/openGraphImage.png`,
         width: 800,
         height: 600,
         alt: "미리보기 이미지",
