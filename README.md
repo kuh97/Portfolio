@@ -1,10 +1,24 @@
 # 🚀 나만의 포트폴리오 (My Portfolio)
 
 Next.js와 최신 기술 스택을 활용하여 제작한 서버사이드 렌더링(SSR) 기반의 개인 포트폴리오 웹사이트입니다.
+<br>
+<br>
+
+## 🌐 라이브 데모 (Live Demo)
+
+[**uihyeon-portfolio.vercel.app**](https://uihyeon-portfolio.vercel.app)
+<br>
+<br>
+
+## ✍️ 개발 기록 (Development Log)
+
+[포트폴리오 프로젝트 - 시작하기 전](https://kuh97.tistory.com/entry/%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-%EC%8B%9C%EC%9E%91%ED%95%98%EA%B8%B0-%EC%A0%84)
+<br>
+<br>
 
 ## ✨ 기술 스택 (Tech Stack)
 
-이 프로젝트는 다음과 같은 현대적이고 효율적인 기술들을 기반으로 구축되었습니다.
+이 프로젝트는 다음과 같은 기술들을 기반으로 구축되었습니다.
 
 ### Core & Framework
 
@@ -19,11 +33,6 @@ Next.js와 최신 기술 스택을 활용하여 제작한 서버사이드 렌더
 ### Styling
 
 - **Tailwind CSS**: 유틸리티-우선(Utility-first) CSS 프레임워크로, 빠르고 일관된 UI 개발을 지원합니다.
-
-### State Management
-
-- **TanStack Query (React Query)**: 서버 상태 관리를 위한 라이브러리로, 데이터 페칭, 캐싱, 동기화 작업을 효율적으로 처리합니다.
-- **Zustand**: 가볍고 직관적인 클라이언트 상태 관리를 위한 라이브러리입니다.
 
 ### Deployment
 
