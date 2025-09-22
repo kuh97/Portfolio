@@ -7,9 +7,10 @@ import { FcCalendar } from "react-icons/fc";
 
 interface ProjectModalProps {
   project: Project;
+  returnUrl?: string;
 }
 
-export function ProjectModal({ project }: ProjectModalProps) {
+export function ProjectModal({ project, returnUrl }: ProjectModalProps) {
   const renderIcon = () => {
     switch (project.info?.type) {
       case "Company":
@@ -24,7 +25,7 @@ export function ProjectModal({ project }: ProjectModalProps) {
   };
 
   return (
-    <ProjectModalClient>
+    <ProjectModalClient returnUrl={returnUrl}>
       <div className={`-mt-12 pt-4`}>
         <div className={`flex items-start justify-between mb-6`}>
           <h3 className={`font-bold text-gray-900 dark:text-white pr-16`}>

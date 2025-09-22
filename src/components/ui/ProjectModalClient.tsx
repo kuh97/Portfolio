@@ -1,20 +1,32 @@
 "use client";
 
 import { useRouter } from "next/navigation";
-import { useEffect } from "react";
+import { useCallback, useEffect } from "react";
 import { IoMdClose } from "react-icons/io";
 
 interface ProjectModalClientProps {
   children: React.ReactNode;
+  returnUrl?: string;
 }
 
-export function ProjectModalClient({ children }: ProjectModalClientProps) {
+export function ProjectModalClient({
+  children,
+  returnUrl,
+}: ProjectModalClientProps) {
   const router = useRouter();
+
+  const handleClose = useCallback(() => {
+    if (returnUrl) {
+      router.push("/");
+    } else {
+      router.back();
+    }
+  }, [returnUrl, router]);
 
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
       if (event.key === "Escape") {
-        router.back();
+        handleClose();
       }
     };
 
@@ -25,15 +37,7 @@ export function ProjectModalClient({ children }: ProjectModalClientProps) {
       window.removeEventListener("keydown", handleKeyDown);
       document.body.style.overflow = "unset";
     };
-  }, [router]);
-
-  const handleCloseClick = () => {
-    if (window.history.length > 2) {
-      router.back();
-    } else {
-      router.push("/");
-    }
-  };
+  }, [handleClose]);
 
   return (
     <div
@@ -46,7 +50,7 @@ export function ProjectModalClient({ children }: ProjectModalClientProps) {
         <button
           aria-label="Close modal"
           className={`primary-button sticky top-0 left-full ml-4 -mt-1 -mr-1 z-10 rounded-full px-2 py-2 close-button`}
-          onClick={handleCloseClick}
+          onClick={handleClose}
         >
           <IoMdClose className={`w-5 h-5`} />
         </button>
