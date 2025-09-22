@@ -16,7 +16,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
   return (
     <main className="min-h-screen bg-white dark:bg-gray-900">
       <div className="container mx-auto px-4 py-8">
-        <ProjectModal project={project} />
+        <ProjectModal project={project} returnUrl={"/"} />
       </div>
     </main>
   );
