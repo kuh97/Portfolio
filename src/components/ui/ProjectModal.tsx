@@ -4,6 +4,7 @@ import { FaBuilding, FaUser, FaUsers } from "react-icons/fa";
 import { CollapsibleSection } from "./CollapsibleSection";
 import { HiOutlineArrowRight } from "react-icons/hi";
 import { FcCalendar } from "react-icons/fc";
+import { HighlightText } from "./HighlightText";
 
 interface ProjectModalProps {
   project: Project;
@@ -69,7 +70,7 @@ export function ProjectModal({ project, returnUrl }: ProjectModalProps) {
                   <p
                     className={`text-gray-700 dark:text-gray-300 leading-relaxed`}
                   >
-                    {desc}
+                    <HighlightText text={desc} />
                   </p>
                 </li>
               ))}
@@ -98,7 +99,7 @@ export function ProjectModal({ project, returnUrl }: ProjectModalProps) {
             className={`border-t border-gray-400 dark:border-gray-700 pt-6 space-y-4`}
           >
             <h4 className={`mb-3 text-gray-900 dark:text-gray-100`}>
-              <strong>주요 업무 및 성과</strong>
+              <strong>담당 업무 및 성과</strong>
             </h4>
             {project.tasks.map((task) => (
               <CollapsibleSection key={task.id} task={task} />

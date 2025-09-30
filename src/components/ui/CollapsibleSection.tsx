@@ -4,6 +4,7 @@ import { TaskItem } from "@/types";
 import { AnimatePresence, motion } from "framer-motion";
 import { useState } from "react";
 import { HiChevronDown, HiOutlineArrowRight } from "react-icons/hi2";
+import { HighlightText } from "./HighlightText"; // 추가
 
 interface CollapsibleSectionProps {
   task: TaskItem;
@@ -65,7 +66,7 @@ export function CollapsibleSection({ task }: CollapsibleSectionProps) {
                         <p
                           className={`text-gray-700 dark:text-gray-300 leading-relaxed`}
                         >
-                          {issue}
+                          <HighlightText text={issue} />
                         </p>
                       </li>
                     ))}
@@ -94,7 +95,7 @@ export function CollapsibleSection({ task }: CollapsibleSectionProps) {
                         <p
                           className={`text-gray-700 dark:text-gray-300 leading-relaxed`}
                         >
-                          {solution}
+                          <HighlightText text={solution} />
                         </p>
                       </li>
                     ))}
@@ -123,7 +124,7 @@ export function CollapsibleSection({ task }: CollapsibleSectionProps) {
                         <p
                           className={`text-gray-700 dark:text-gray-300 leading-relaxed`}
                         >
-                          {achievement}
+                          <HighlightText text={achievement} />
                         </p>
                       </li>
                     ))}

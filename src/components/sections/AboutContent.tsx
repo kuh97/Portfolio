@@ -2,6 +2,7 @@ import Image from "next/image";
 import { BsDownload } from "react-icons/bs";
 import { AnimatedSection } from "../common/AnimatedSection";
 import { SlEmotsmile } from "react-icons/sl";
+import { HighlightText } from "../ui/HighlightText";
 
 const keywords = ["사용자 경험(UX)", "협업 & 소통", "도전", "긍정적 사고"];
 
@@ -17,6 +18,8 @@ export function AboutContent({ aboutData }: AboutContentProps) {
   if (!aboutData) {
     return null;
   }
+
+  const aboutText = `사용자가 더 편리하게 서비스를 이용할 수 있도록 **UI/UX 기능을 개발하고 개선**했으며 **코드 품질 향상**에도 집중했습니다. **팀의 생산성**을 높이고 **유지보수하기 쉬운 구조**를 고민하며 **새로운 기술을 빠르게 익혀 적용**하는 것을 즐깁니다. 앞으로도 **사용자 중심의 서비스**를 만들고 함께 일하는 동료들에게 **긍정적인 영향**을 주는 개발자가 되고자 합니다.`;
 
   return (
     <div className={`grid lg:grid-cols-2 gap-12 items-center`}>
@@ -48,10 +51,7 @@ export function AboutContent({ aboutData }: AboutContentProps) {
           <SlEmotsmile className="ml-1 w-6 h-6 text-blue-700 dark:text-yellow-300" />
         </h3>
         <p className={`text-gray-800 dark:text-gray-300 leading-relaxed`}>
-          사용자 경험과 협업의 가치를 중요하게 생각하는 프론트엔드 개발자
-          김의현입니다. 복잡한 기능을 사용자가 쉽게 다가갈 수 있도록 만드는
-          과정을 즐기며, 팀원들과 함께 더 나은 코드를 만들기 위해 끊임없이
-          고민하고 있습니다.
+          <HighlightText text={aboutText} />
         </p>
 
         <div className={`flex flex-wrap justify-center lg:justify-start gap-2`}>
