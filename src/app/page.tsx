@@ -5,6 +5,8 @@ import { Projects } from "@/components/sections/Projects";
 import { Skills } from "@/components/sections/Skills";
 import prisma from "@/lib/prisma";
 
+export const revalidate = 86400;
+
 async function getAboutData() {
   const aboutData = await prisma.user.findFirst({
     where: { name: "김의현" },
