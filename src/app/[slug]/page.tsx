@@ -1,5 +1,5 @@
 import { ProjectModal } from "@/components/ui/ProjectModal";
-import { getProjectBySlug } from "@/lib/projects";
+import { getProjectBySlug, getProjectSlugs } from "@/lib/projects";
 import { notFound } from "next/navigation";
 
 interface ProjectPageProps {
@@ -7,6 +7,10 @@ interface ProjectPageProps {
 }
 
 export const revalidate = 86400; // 24시간마다 ISR로 페이지를 재생성
+
+export async function generateStaticParams() {
+  return getProjectSlugs();
+}
 
 export default async function ProjectPage({ params }: ProjectPageProps) {
   const project = await getProjectBySlug((await params).slug);

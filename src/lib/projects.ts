@@ -1,6 +1,12 @@
 import { unstable_cache } from "next/cache";
 import prisma from "@/lib/prisma";
 
+export async function getProjectSlugs() {
+  return prisma.project.findMany({
+    select: { slug: true },
+  });
+}
+
 export const getProjectBySlug = unstable_cache(
   async (slug: string) => {
     try {
